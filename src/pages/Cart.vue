@@ -7,8 +7,8 @@
       <div v-for="(item,index) in cartItems" :key="index" class='cart-cell'>
         <div :data-id="item.id"  class='cart-box' :data-index="index">
             <div class='icon'>
-                <van-icon :name="iconXz" v-if="item.selected" @click="selectedCart" :data-index="index"/>
-                <van-icon :name="iconWxz" v-else @click="selectedCart" :data-index="index"/>
+                <van-icon :name="iconXz" v-if="item.selected" @click="selectedCart" :data-index="index" size="20px"/>
+                <van-icon :name="iconWxz" v-else @click="selectedCart" :data-index="index" size="20px"/>
             </div>
 
             <div class='cart-main'>
@@ -36,8 +36,8 @@
             <!-- 底部 -->
             <div class="cart-bottom">
               <div class=cart-bottom-icon>
-                <van-icon :name="iconXz" v-if="CheckAll" @click="select" :data-index="index"/>
-                <van-icon :name="iconWxz" v-else @click="select" :data-index="index"/>
+                <van-icon :name="iconXz" v-if="CheckAll" @click="select" :data-index="index" size="20px"/>
+                <van-icon :name="iconWxz" v-else @click="select" :data-index="index"  size="20px"/>
               </div>
               <div class='checkAll'>全选</div>
               <div class='cart-sum'>
@@ -340,7 +340,7 @@ export default {
   float: left;
 }
 .cart-bottom-icon{
-  margin:5px 0px;
+  margin:-2px 0px;
   float: left;
 }
 .cart-sum{
