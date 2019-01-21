@@ -108,8 +108,8 @@ export default {
       ],
       // 商品详情介绍
       detailImg: [
-        {img:require('/static/sp-detail1.png')},
-        {img:require('/static/sp-detail2.png')}
+        {img:'/static/sp-detail1.png'},
+        {img:'/static/sp-detail2.png'}
       ],
       show: false,
       specifValue: 1,
