@@ -25,8 +25,7 @@ import BindPhone from '@/pages/BindPhone'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  //mode: 'hash',
+  //mode: 'history',开发时使用
   routes: [
     {
       path: '/Index',
