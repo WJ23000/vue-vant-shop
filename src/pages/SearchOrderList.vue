@@ -130,6 +130,7 @@ export default {
   height:44px;
   background-color:#fff;
   border-bottom: 1px solid #f2f2f2; 
+  margin-top: 2px;
 }
 .sort-btn{
   width:33.333%;

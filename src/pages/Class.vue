@@ -6,34 +6,36 @@
     <div class="page-content">
       <!--主盒子-->
       <!--左侧栏-->
-      <div class="content-left">
-        <div class="nav_left">
-          <div v-for="(item,index) in cateItems" :key="index">
-            <!--当前项的id等于item项的id，那个就是当前状态-->
-            <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
-           <div :class="curNav == item.cate_id ?  curActive1 : curActive2" @click="switchRightTab(item.cate_id,index)">{{item.cate_name}}</div>
-          </div>
-        </div>
-      </div>
-      
-      <!--右侧栏-->
-      <div class="content-right">
-        <div class="nav_right">
-          <!--如果有数据，才遍历项-->
-          <div v-if="cateItems[curIndex].ishaveChild">
-            <div v-for="(item,index) in cateItems[curIndex].children" :key="index">
-              <div class="nav_right_items">
-              <!--界面跳转 -->
-                <router-link :to="{path:'/SearchOrderList',query: {goodsId: item.child_id}}">
-                  <img :src="item.image"/>
-                  <span>{{item.name}}</span>
-                </router-link>
-              </div>
+      <div class="content-left-right"> 
+        <div class="content-left">
+          <div class="nav_left">
+            <div v-for="(item,index) in cateItems" :key="index">
+              <!--当前项的id等于item项的id，那个就是当前状态-->
+              <!--用data-index记录这个数据在数组的下标位置，使用data-id设置每个item的id值，供打开2级页面使用-->
+            <div :class="curNav == item.cate_id ?  curActive1 : curActive2" @click="switchRightTab(item.cate_id,index)">{{item.cate_name}}</div>
             </div>
           </div>
-          <!--如果无数据，则显示数据-->
-          <div class="nodata_text" v-else>
-            <img src="../assets/no-result.png"/>
+        </div>
+      
+        <!--右侧栏-->
+        <div class="content-right">
+          <div class="nav_right">
+            <!--如果有数据，才遍历项-->
+            <div v-if="cateItems[curIndex].ishaveChild">
+              <div v-for="(item,index) in cateItems[curIndex].children" :key="index">
+                <div class="nav_right_items">
+                <!--界面跳转 -->
+                  <router-link :to="{path:'/SearchOrderList',query: {goodsId: item.child_id}}">
+                    <img :src="item.image"/>
+                    <span>{{item.name}}</span>
+                  </router-link>
+                </div>
+              </div>
+            </div>
+            <!--如果无数据，则显示数据-->
+            <div class="nodata_text" v-else>
+              <img src="../assets/no-result.png"/>
+            </div>
           </div>
         </div>
       </div>
@@ -184,61 +186,61 @@ export default {
         },
         {
           cate_id: 4,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 5,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 6,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 7,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 8,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 9,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 10,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 11,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 12,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         },
         {
           cate_id: 13,
-          cate_name: "个人护理",
+          cate_name: "其他",
           ishaveChild: false,
           children: []
         }
@@ -275,7 +277,11 @@ export default {
 }
 </script>
 <style scoped>
-  body{
+  .content-left-right{
+    position: absolute;
+    top: 0px; 
+    width: 100%;
+    height: 100%;
     overflow-y: hidden;
   }
   /*左侧栏主盒子*/  
@@ -318,7 +324,7 @@ export default {
     /*背景色变成白色*/  
     background: #ffffff;  
     color: #3982f6; 
-    border-left: 2px solid #3982f6; 
+    border-left: 4px solid #3982f6; 
   }  
   /*右侧栏主盒子*/ 
   .content-right{
