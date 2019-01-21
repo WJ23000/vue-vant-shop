@@ -83,10 +83,18 @@
       </div>
     </div>
     <van-tabbar v-model="active">
-      <van-tabbar-item url="/" icon="shop-o">首页</van-tabbar-item>
-      <van-tabbar-item url="/Class" icon="apps-o">分类</van-tabbar-item>
-      <van-tabbar-item url="/Cart" icon="shopping-cart-o" info="5">购物车</van-tabbar-item>
-      <van-tabbar-item url="/Mine" icon="manager-o">我的</van-tabbar-item>
+      <router-link :to="{path:'/'}">
+        <van-tabbar-item icon="shop-o">首页</van-tabbar-item>
+      </router-link>
+      <router-link :to="{path:'/Class'}">
+        <van-tabbar-item icon="apps-o">分类</van-tabbar-item>
+      </router-link>
+      <router-link :to="{path:'/Cart'}">
+        <van-tabbar-item icon="shopping-cart-o" info="5">购物车</van-tabbar-item>
+      </router-link>
+      <router-link :to="{path:'/Mine'}">
+        <van-tabbar-item icon="manager-o">我的</van-tabbar-item>
+      </router-link>
     </van-tabbar>
   </div>
 </template>
