@@ -339,10 +339,10 @@ export default {
   margin:13px 10px;
   float: left;
 }
-.cart-bottom-icon{
+/* .cart-bottom-icon{
   margin:-2px 0px;
   float: left;
-}
+} */
 .cart-sum{
   width: 150px;
   height: 100%;
