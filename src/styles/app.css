@@ -1,0 +1,9 @@
+.page-header{
+    position: fixed;
+    top:0;
+    width: 100%;
+    z-index: 1;
+}
+.page-content{
+    margin-top: 44px;
+}
