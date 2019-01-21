@@ -28,7 +28,7 @@ export default new Router({
   //mode: 'history',开发时使用
   routes: [
     {
-      path: '/Index',
+      path: '/',
       name: 'Index',
       component: Index
     },
