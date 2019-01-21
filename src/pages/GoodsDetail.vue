@@ -103,13 +103,13 @@ export default {
       title:"商品详情",   
       isLike: true,
       images: [
-        '/static/s-banner1.jpg',
-        '/static/s-banner2.jpg'
+        require('../assets/s-banner1.jpg'),
+        require('../assets/s-banner2.jpg')
       ],
       // 商品详情介绍
       detailImg: [
-        {img:'/static/sp-detail1.png'},
-        {img:'/static/sp-detail2.png'}
+        {img:require('../assets/sp-detail1.png')},
+        {img:require('../assets/sp-detail2.png')}
       ],
       show: false,
       specifValue: 1,
