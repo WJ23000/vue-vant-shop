@@ -62,7 +62,7 @@ export default {
     .goods-grid .goods-title{
         float: left;
         width: 100%;
-        height: 40px;
+        height: 38px;
         font-size: 14px;
         display:-webkit-box;
         -webkit-box-orient:vertical;

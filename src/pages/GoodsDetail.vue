@@ -24,6 +24,7 @@
               placeholder="请选择规格"
               @click="onSpecif"
               :border="false"
+              :readonly="true"
               title-width="40px"
             />
             <van-popup
@@ -319,4 +320,7 @@ button {
 .van-info{
   background-color: #3982f6 !important;
 } 
+button{
+  border: 0;
+}
 </style>
