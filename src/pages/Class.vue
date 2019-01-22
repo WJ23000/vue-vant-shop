@@ -289,7 +289,7 @@ export default {
     position: absolute;
     left: 0;
     top: 44px; 
-    width: 24%;
+    width: 26%;
     height: 100%;
     overflow-y: auto;
   }
