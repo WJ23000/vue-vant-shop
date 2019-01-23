@@ -146,7 +146,7 @@ export default {
         _this.userName=resData.userName;
       }).catch(function(error){
         alert(error);
-      }); ;
+      }); 
     }
     
   }
