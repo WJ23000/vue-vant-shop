@@ -25,7 +25,9 @@
                 <div class='shop-amount'>合计：￥7000.00</div>
                 </div>
                 <div class='order-cell-btn'>
-                    <span class='btn-zf' @click="tzEvalu(1)">查看</span>
+                  <router-link :to="{path:'/Evalu',query: {evaluId: 1}}">
+                    <button class='btn-zf'>查看</button>
+                  </router-link>
                 </div>
             </div>
             <div class='order-cell'>
@@ -48,7 +50,9 @@
                 <div class='shop-amount'>合计：￥7000.00</div>
                 </div>
                 <div class='order-cell-btn'>
-                    <span class='btn-zf' @click="tzEvalu(1)">查看</span>
+                  <router-link :to="{path:'/Evalu',query: {evaluId: 1}}">
+                    <button class='btn-zf'>查看</button>
+                  </router-link>
                 </div>
             </div>
         </div>
@@ -75,10 +79,7 @@ export default {
     
   },
   methods:{
-    //查看评价
-    tzEvalu: function (id) {
-      this.$router.push({ path: '/Evalu' ,params:{id:id}});
-    }
+    
   }
   
 }
@@ -167,9 +168,10 @@ export default {
 }
 .order-cell-btn .btn-zf{
   float: right;
-  padding: 4px 20px;
+  width: 80px;
+  height: 32px;
+  line-height: 32px;
   text-align: center;
-  height: 20px;
   background: #ffffff;
   color: #3982f6;
   border: 1px solid #3982f6;
