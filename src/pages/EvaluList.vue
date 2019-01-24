@@ -25,7 +25,7 @@
                 <div class='shop-amount'>合计：￥7000.00</div>
                 </div>
                 <div class='order-cell-btn'>
-                    <button class='btn-zf' @click="tzEvalu(1)">查看</button>
+                    <span class='btn-zf' @click="tzEvalu(1)">查看</span>
                 </div>
             </div>
             <div class='order-cell'>
@@ -48,7 +48,7 @@
                 <div class='shop-amount'>合计：￥7000.00</div>
                 </div>
                 <div class='order-cell-btn'>
-                    <button class='btn-zf' @click="tzEvalu(1)">查看</button>
+                    <span class='btn-zf' @click="tzEvalu(1)">查看</span>
                 </div>
             </div>
         </div>
@@ -169,6 +169,7 @@ export default {
   float: right;
   padding: 5px 20px;
   text-align: center;
+  height: 20px;
   background: #ffffff;
   color: #3982f6;
   border: 1px solid #3982f6;
