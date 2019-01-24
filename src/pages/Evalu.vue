@@ -28,6 +28,8 @@
                 </van-cell>
                 <van-field
                   v-model="formText.leave"
+                  name="leave"
+                  clearable
                   label="留言"
                   type="textarea"
                   placeholder="请输入留言"
@@ -53,6 +55,7 @@
 <script>
 import HeaderTwo from '@/components/HeaderTwo';
 import areaVal from '@/utils/areaList'
+import validator from '@/utils/validator';
 export default {
   name: 'Evalu',
   components:{
@@ -67,26 +70,77 @@ export default {
         leave:"",
         checked:false
       }, 
+      rules: {
+        descScore: [
+          {
+            validator: (rule, value, callback) => {
+              if (!value) {
+                callback('请选择描述相符星级');
+              } else if (/^[1-5]\d*$/.test(value)) {
+                callback();
+              } else {
+                callback('请选择描述相符星级');
+              }
+            }
+          }
+        ],
+        tudeScore: [
+          {
+            validator: (rule, value, callback) => {
+              if (!value) {
+                callback('请选择服务态度星级');
+              } else if (/^[1-5]\d*$/.test(value)) {
+                callback();
+              } else {
+                callback('请选择服务态度星级');
+              }
+            }
+          }
+        ],
+        leave: [
+          {required: true, message: '请输入留言'}
+        ]
+      }
     }
   },
   created () {
-
+    this.validator = validator(this.rules, this.formText);
   },
   mounted () {
 
   },
   methods:{
+    //正则验证方法
+    validate(callback, data) {
+      this.validator.validate((errors, fields) => {
+        if (errors) {
+          fields.forEach(item => {
+            this.$toast(item.message);
+          })
+        }
+        callback && callback(errors, fields)
+      }, data);
+    },
+    //提交表单
+    formSubmitEvalu: function() {
+      //触发表单正则校验且通过校验提交数据
+      this.validate((errors, fields) => {
+        console.log(fields.length);
+        if(fields.length==0){
+          this.$toast("此处处理表单数据");
+          console.log(this.formText);
+        }else{
+          return false;
+        }
+      })
+    },
     //星形评分
     onDesc: function (value) {
       this.descScore= value
     },
     onTude: function (value) {
       this.tudeScore= value
-    },
-      //提交表单
-      formSubmitEvalu: function() {
-          console.log(this.formText);
-      }
+    }
   }
   
 }

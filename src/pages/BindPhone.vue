@@ -13,8 +13,6 @@
                     icon="arrow"
                     placeholder="手机号码"
                     bind:click-icon="onClickIcon"
-                    :error-message="errorMsg.phone"
-                    @click-icon="formText.phone = ''"
                 />
                 <van-field
                     v-model="formText.sms"
@@ -22,8 +20,6 @@
                     clearable
                     placeholder="请输入短信验证码"
                     use-button-slot
-                    :error-message="errorMsg.sms"
-                    @click-icon="formText.sms = ''"
                 >
                 <van-button slot="button" size="small" type="primary">发送验证码</van-button>
                 </van-field>
@@ -48,10 +44,6 @@ export default {
       formText:{
         phone:"",
         sms:""
-      },
-      errorMsg: {
-        phone: '',
-        sms: ''
       },
       rules: {
         phone: [
@@ -80,14 +72,9 @@ export default {
 
   },
   methods:{
-    /**
-     * 验证方法
-     * @param callback
-     * @param data
-     */
+    //正则验证方法
     validate(callback, data) {
       this.validator.validate((errors, fields) => {
-        this.resetField();
         if (errors) {
           fields.forEach(item => {
             this.$toast(item.message);
@@ -96,12 +83,18 @@ export default {
         callback && callback(errors, fields)
       }, data);
     },
-  
     //提交表单
     formSubmitPhone: function() {
-        this.validate((errors, fields) => {
-          console.log(fields);
-        })
+      //触发表单正则校验且通过校验提交数据
+      this.validate((errors, fields) => {
+        console.log(fields.length);
+        if(fields.length==0){
+          this.$toast("此处处理表单数据");
+          console.log(this.formText);
+        }else{
+          return false;
+        }
+      })
     }
   }
   
