@@ -13,6 +13,8 @@
                     icon="arrow"
                     placeholder="手机号码"
                     bind:click-icon="onClickIcon"
+                    :error-message="errorMsg.phone"
+                    @click-icon="formText.phone = ''"
                 />
                 <van-field
                     v-model="formText.sms"
@@ -20,6 +22,8 @@
                     clearable
                     placeholder="请输入短信验证码"
                     use-button-slot
+                    :error-message="errorMsg.sms"
+                    @click-icon="formText.sms = ''"
                 >
                 <van-button slot="button" size="small" type="primary">发送验证码</van-button>
                 </van-field>
@@ -45,19 +49,59 @@ export default {
         phone:"",
         sms:""
       },
-      
+      errorMsg: {
+        phone: '',
+        sms: ''
+      },
+      rules: {
+        phone: [
+          {
+            validator: (rule, value, callback) => {
+              if (!value) {
+                callback('请输入手机号码');
+              } else if (/^[1][0-9]{10}$/.test(value)) {
+                callback();
+              } else {
+                callback('请输入正确的手机号码');
+              }
+            }
+          }
+        ],
+        sms: [
+          {required: true, message: '请输入验证码'}
+        ]
+      }
     }
   },
   created () {
-
+    this.validator = validator(this.rules, this.formText);
   },
   mounted () {
 
   },
   methods:{
+    /**
+     * 验证方法
+     * @param callback
+     * @param data
+     */
+    validate(callback, data) {
+      this.validator.validate((errors, fields) => {
+        this.resetField();
+        if (errors) {
+          fields.forEach(item => {
+            this.$toast(item.message);
+          })
+        }
+        callback && callback(errors, fields)
+      }, data);
+    },
+  
     //提交表单
     formSubmitPhone: function() {
-        console.log(this.formText);
+        this.validate((errors, fields) => {
+          console.log(fields);
+        })
     }
   }
   
