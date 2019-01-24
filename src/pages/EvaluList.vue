@@ -167,7 +167,7 @@ export default {
 }
 .order-cell-btn .btn-zf{
   float: right;
-  padding: 5px 20px;
+  padding: 4px 20px;
   text-align: center;
   height: 20px;
   background: #ffffff;
