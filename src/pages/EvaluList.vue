@@ -26,7 +26,7 @@
                 </div>
                 <div class='order-cell-btn'>
                     <button class='btn-zf' @click="tzEvalu(1)">查看</button>
-                </button>
+                </div>
             </div>
             <div class='order-cell'>
                 <div class='order-cell-store'>
