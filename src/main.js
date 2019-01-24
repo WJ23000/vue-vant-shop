@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vant from 'vant'
-import { Lazyload } from 'vant';
+import { Lazyload } from 'vant'
 import 'vant/lib/index.css'
 import '../src/styles/app.css'
 
@@ -14,6 +14,7 @@ import axios from 'axios'
 Vue.prototype.$http = axios
 
 // 全局工具类引用
+//rem基准值
 import './utils/rem'
 
 
@@ -24,7 +25,7 @@ Vue.config.devtools = true
 
 // 注册中间件
 Vue.use(Vant)
-Vue.use(Lazyload);
+Vue.use(Lazyload)
 
 /* eslint-disable no-new */
 new Vue({

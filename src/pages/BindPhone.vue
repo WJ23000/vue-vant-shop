@@ -32,6 +32,7 @@
 
 <script>
 import HeaderTwo from '@/components/HeaderTwo';
+import validator from '@/utils/validator';
 export default {
   name: 'BindPhone',
   components:{
