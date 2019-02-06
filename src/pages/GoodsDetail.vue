@@ -12,8 +12,8 @@
         <div>
           <!-- 商品信息 -->
           <div class="detail">
-            <div class="title" name="title">LANCOME兰蔻小黑瓶精华肌底液</div>
-            <div class="price" name="price">￥3500.00</div>
+            <div class="title" name="title">高空航拍无人机至尊荣耀版</div>
+            <div class="price" name="price">￥3501.00</div>
           </div>
           <div style='margin-top:10px;'>
             <van-field
@@ -35,11 +35,12 @@
               <div class='specif-count'>
                 <div class='specif-header'>
                   <div class='specif-img'>
-                    <img class='img' src='../assets/shop1.png'/>
+                    <img class='img' :src='specif.img'/>
                   </div>
                   <div class='specif-detail'>
-                    <div class='specif-content'>星空蓝至尊版</div>
-                    <div class='specif-price'>￥3500.00</div>
+                    <div class='specif-price'>￥{{specif.price}}</div>
+                    <div class='specif-inventory'>库存{{specif.inventory}}件</div>
+                    <div class='specif-title'>{{specif.title}}</div>
                   </div>
                   <div class='specif-close-icon'>
                     <van-icon name="close" size="20px" @click='closeSpecif'/>
@@ -47,12 +48,8 @@
                 </div>
                 <div class='specif-cation'>
                   <div class='search-history-title'>规格</div>
-                  <div class='search-cell'>
-                    <div class='search-option'>星空蓝</div>
-                    <div class='search-option'>炫紫</div>
-                    <div class='search-option'>玫瑰金</div>
-                    <div class='search-option'>星空灰</div>
-                    <div class='search-option'>炫黑</div>
+                  <div class='search-cell' v-for="(item, index) in specifDetail" :key="index">
+                    <div :class="curNav == item.specif_id ?  curActive1 : curActive2" @click="xzSpecif(item.specif_id,index,item.img,item.price,item.name,item.inventory)" >{{item.name}}</div>
                   </div>
                 </div>
                 <div style='margin-bottom:44px;'>
@@ -61,8 +58,8 @@
                   </van-cell>
                 </div>
                 <van-goods-action>
-                  <van-goods-action-big-btn text="加入购物车"/>
-                  <van-goods-action-big-btn primary text="立即购买"/>
+                  <van-goods-action-big-btn text="加入购物车" @click="onCart"/>
+                  <van-goods-action-big-btn primary text="立即购买" @click="onBuy"/>
                 </van-goods-action>  
               </div>
             </van-popup>
@@ -83,9 +80,9 @@
         <!-- 底部悬浮栏 -->
         <van-goods-action>
           <van-goods-action-mini-btn icon="star-o" text="收藏"/>
-          <van-goods-action-mini-btn icon="cart-o" text="购物车"/>
-          <van-goods-action-big-btn text="加入购物车"/>
-          <van-goods-action-big-btn primary text="立即购买"/>
+          <van-goods-action-mini-btn icon="cart-o" text="购物车" @click="tzCart"/>
+          <van-goods-action-big-btn text="加入购物车" @click="onCart"/>
+          <van-goods-action-big-btn primary text="立即购买" @click="onBuy"/>
         </van-goods-action>
     </div>
   </div>
@@ -112,6 +109,54 @@ export default {
         {img:require('../assets/sp-detail1.png')},
         {img:require('../assets/sp-detail2.png')}
       ],
+      // 规格
+      specif: {
+        img: require('../assets/shop1.png'),
+        title: "选择 规格参数",
+        price: "3500-4000",
+        inventory: "5000"
+      },
+      specifDetail: [
+        {
+          specif_id: 1,
+          img: require('../assets/shop1.png'),
+          name: "星空蓝",
+          price: "3501.00",
+          inventory: "881"
+        }, 
+        {
+          specif_id: 2,
+          img: require('../assets/shop1.png'),
+          name: "炫紫",
+          price: "3502.00",
+          inventory: "882"
+        },
+        {
+          specif_id: 3,
+          img: require('../assets/shop1.png'),
+          name: "玫瑰金",
+          price: "3503.00",
+          inventory: "883"
+        },
+        {
+          specif_id: 4,
+          img: require('../assets/shop1.png'),
+          name: "星空灰",
+          price: "3504.00",
+          inventory: "884"
+        },
+        {
+          specif_id: 5,
+          img: require('../assets/shop1.png'),
+          name: "炫黑",
+          price: "3505.00",
+          inventory: "885"
+        },
+      ],
+      curNav: 0,
+      curIndex: 0,
+      curActive1: "search-option active",
+      curActive2: "search-option",
       show: false,
       specifValue: 1,
       specifCount: 1
@@ -124,6 +169,19 @@ export default {
     
   },
   methods:{
+    // 获取当前选中的规格参数
+    xzSpecif: function (id,index,img,name,price,inventory) {
+      // 获取item项的id，和数组的下标值  
+      var id = id,
+      index = parseInt(index);
+      // 把点击到的某一项，设为当前index  
+      this.curNav= id,
+      this.curIndex= index,
+      this.specif.price= price,
+      this.specif.inventory= inventory,
+      this.specif.title= '已选:"'+name+'"',  
+      console.log(id,index,img,price,name,inventory);
+    },
     //打开商品规格和购买数量
     onSpecif: function () {  
       this.show= true
@@ -140,12 +198,16 @@ export default {
       this.isLike= !this.data.isLike
     },
     //跳到购物车
-    toCar() {
-      
+    tzCart() {
+      this.$router.push({ path: '/Cart' ,params:{id:"1"}});
+    },
+    //加入购物车
+    onCart() {
+      this.show= true
     },
     //立即购买
-    immeBuy() {
-      
+    onBuy() {
+      this.show= true
     },
     //图片预览
     swipeImgPreview: function () {
@@ -282,10 +344,17 @@ button {
 }
 .specif-count .specif-price{
   color: #3982f6;
-  font-size:14px;
+  font-size:18px;
+  margin-top: 20px;
 }
-.specif-count .specif-content{
-  font-size: 18px;
+.specif-count .specif-inventory{
+  font-size: 14px;
+  color: #aaaaaa;
+  margin-top: 5px;
+}
+.specif-count .specif-title{
+  font-size: 14px;
+  margin-top: 10px;
 }
 
 .specif-count .specif-cation{
@@ -299,9 +368,6 @@ button {
   padding: 10px 15px;
   box-sizing: border-box;
 }
-.search-cell{
-  padding: 10px 0px;
-}
 .search-cell .search-option{
   float: left;
   margin: 5px 15px;
@@ -312,6 +378,11 @@ button {
   color: #666666;
   border-radius: 25px;
 }
+/*规格item被选中时*/  
+.search-cell .search-option.active{  
+  background: #3982f6;  
+  color: #ffffff; 
+}  
 
 .van-button--danger{
   background-color: #3982f6 !important;
