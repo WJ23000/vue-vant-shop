@@ -170,7 +170,7 @@ export default {
   },
   methods:{
     // 获取当前选中的规格参数
-    xzSpecif: function (id,index,img,name,price,inventory) {
+    xzSpecif: function (id,index,img,price,name,inventory) {
       // 获取item项的id，和数组的下标值  
       var id = id,
       index = parseInt(index);
