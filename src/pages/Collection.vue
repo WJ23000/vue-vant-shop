@@ -29,7 +29,8 @@
 
 <script>
 import HeaderTwo from '@/components/HeaderTwo';
-import VueScroller from 'vue-scroller'
+import VueScroller from 'vue-scroller';
+Vue.use(VueScroller)
 export default {
   name: 'Collection',
   components:{
