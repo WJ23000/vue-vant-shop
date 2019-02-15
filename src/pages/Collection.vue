@@ -4,6 +4,7 @@
       <HeaderTwo :titleVal="title"></HeaderTwo>
     </div>
     <div class="page-content">
+      <scroller :on-refresh="refresh" :on-infinite="infinite" ref="myscroller">
         <div class="collection-list" v-for="(item,index) in collectionList" :key="index">
           <div class='order-cell'>
               <div class='order-cell-shop'>
@@ -21,12 +22,14 @@
               </div>
           </div>
         </div> 
+      </scroller>
     </div>
   </div>
 </template>
 
 <script>
 import HeaderTwo from '@/components/HeaderTwo';
+import VueScroller from 'vue-scroller'
 export default {
   name: 'Collection',
   components:{
@@ -57,6 +60,30 @@ export default {
             title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
             price: 3003.00,
             sell: 103,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: 4,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3004.00,
+            sell: 104,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: 5,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3005.00,
+            sell: 105,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: 6,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3006.00,
+            sell: 106,
             url: '',
             icon: require('../assets/shop1.png')
         }
