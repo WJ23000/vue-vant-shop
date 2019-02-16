@@ -13,8 +13,13 @@ import axios from 'axios'
 // 改为原型组件使用方式
 Vue.prototype.$http = axios
 
+// 使用vue-scroller上拉刷新下拉加载
+import VueScroller from 'vue-scroller'
+// 注册vue-scroller中间件
+Vue.use(VueScroller)
+
 // 全局工具类引用
-//rem基准值
+// rem基准值
 import './utils/rem'
 
 
@@ -23,7 +28,7 @@ Vue.config.productionTip = false
 // 开启google浏览器debug开发模式
 Vue.config.devtools = true
 
-// 注册中间件
+// 注册vant中间件
 Vue.use(Vant)
 Vue.use(Lazyload)
 

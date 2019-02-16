@@ -4,7 +4,8 @@
       <HeaderTwo :titleVal="title"></HeaderTwo>
     </div>
     <div class="page-content">
-      <scroller :on-refresh="refresh" :on-infinite="infinite" ref="myscroller">
+      <scroller :on-refresh="refresh" :on-infinite="infinite" refresh-layer-color="#3982f6"
+      loading-layer-color="#3982f6" style="top:44px;">
         <div class="collection-list" v-for="(item,index) in collectionList" :key="index">
           <div class='order-cell'>
               <div class='order-cell-shop'>
@@ -29,8 +30,6 @@
 
 <script>
 import HeaderTwo from '@/components/HeaderTwo';
-import VueScroller from 'vue-scroller';
-Vue.use(VueScroller)
 export default {
   name: 'Collection',
   components:{
@@ -100,14 +99,43 @@ export default {
   methods:{
     //删除
     del: function (indexVal) {
-        let collectionList = this.collectionList  //获取购物车列表
-        let index = indexVal  //获取当前点击事件的下标索引
-        collectionList.splice(index, 1)
-        this.collectionList= collectionList
-        if (collectionList.length) {
-            this.cartList= false
+      let collectionList = this.collectionList  //获取购物车列表
+      let index = indexVal  //获取当前点击事件的下标索引
+      collectionList.splice(index, 1)
+      this.collectionList= collectionList
+      if (collectionList.length) {
+          this.cartList= false
+      }
+      localStorage.setItem("collectionList", collectionList)
+    },
+
+    refresh(done) {
+      setTimeout(() => {
+        let start = this.top - 1
+        for (let i = start; i > start - 10; i--) {
+          this.collectionList.price.splice(0, 0, i)
         }
-        localStorage.setItem("collectionList", collectionList)
+        this.top = this.top - 10;
+        done()
+      }, 1500)
+    },
+    infinite(done) {
+      if (this.bottom >= 30) {
+        setTimeout(() => {
+          done(true)
+        }, 1500)
+        return;
+      }
+      setTimeout(() => {
+        let start = this.bottom + 1
+        for (let i = start; i < start + 10; i++) {
+          this.collectionList.push(i + ' - keep walking, be 2 with you.')
+        }
+        this.bottom = this.bottom + 10;
+        setTimeout(() => {
+          done()
+        })
+      }, 1500)
     }
   }
   
