@@ -4,7 +4,7 @@
       <HeaderTwo :titleVal="title"></HeaderTwo>
     </div>
     <div class="page-content">
-      <scroller :on-refresh="refresh" :on-infinite="infinite" refresh-layer-color="#3982f6"
+      <scroller :on-refresh="refresh" :on-infinite="infinite" ref="my_scroller" refresh-layer-color="#3982f6"
       loading-layer-color="#3982f6" style="top:44px;">
         <div class="collection-list" v-for="(item,index) in collectionList" :key="index">
           <div class='order-cell'>
@@ -35,6 +35,7 @@ export default {
   components:{
     HeaderTwo
   },
+  inject: ['reload'], //注入reload方法
   data () {
     return {
       title:"我的收藏",   
@@ -87,7 +88,59 @@ export default {
             url: '',
             icon: require('../assets/shop1.png')
         }
-      ]  
+      ],
+      collectionListMinus: [
+        {
+            id: -1,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: -3001.00,
+            sell: -101,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: -2,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: -3002.00,
+            sell: -102,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: -3,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: -3003.00,
+            sell: -103,
+            url: '',
+            icon: require('../assets/shop1.png')
+        }
+      ],
+      collectionListAdd: [
+        {
+            id: 7,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3007.00,
+            sell: 107,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: 8,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3008.00,
+            sell: 108,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: 9,
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3009.00,
+            sell: 109,
+            url: '',
+            icon: require('../assets/shop1.png')
+        }
+      ]    
     }
   },
   created () {
@@ -110,28 +163,21 @@ export default {
     },
 
     refresh(done) {
-      setTimeout(() => {
-        let start = this.top - 1
-        for (let i = start; i > start - 10; i--) {
-          this.collectionList.price.splice(0, 0, i)
-        }
-        this.top = this.top - 10;
-        done()
-      }, 1500)
+      this.reload();
     },
     infinite(done) {
-      if (this.bottom >= 30) {
+      if (this.bottom >= 3) {
         setTimeout(() => {
           done(true)
         }, 1500)
         return;
       }
       setTimeout(() => {
-        let start = this.bottom + 1
-        for (let i = start; i < start + 10; i++) {
-          this.collectionList.push(i + ' - keep walking, be 2 with you.')
+        let start = 3
+        for (let i = 0; i < start ; i++) {
+          this.collectionList.push(this.collectionListAdd[i])
         }
-        this.bottom = this.bottom + 10;
+        this.bottom = 3;
         setTimeout(() => {
           done()
         })
@@ -142,6 +188,12 @@ export default {
 }
 </script>
 <style scoped>
+/* 使用固定高度解决vue-scroller无法上拉加载 */
+.collection-list{
+  display: block;
+  width: 100%;
+  height: 140px;
+}
 .order-cell{
   float: left;
   width: 100%;  
