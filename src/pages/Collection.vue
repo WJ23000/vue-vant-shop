@@ -89,32 +89,6 @@ export default {
             icon: require('../assets/shop1.png')
         }
       ],
-      collectionListMinus: [
-        {
-            id: -1,
-            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
-            price: -3001.00,
-            sell: -101,
-            url: '',
-            icon: require('../assets/shop1.png')
-        },
-        {
-            id: -2,
-            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
-            price: -3002.00,
-            sell: -102,
-            url: '',
-            icon: require('../assets/shop1.png')
-        },
-        {
-            id: -3,
-            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
-            price: -3003.00,
-            sell: -103,
-            url: '',
-            icon: require('../assets/shop1.png')
-        }
-      ],
       collectionListAdd: [
         {
             id: 7,
