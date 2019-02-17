@@ -1,6 +1,6 @@
-技术栈
+#技术栈
 
-vue2.0+vue-router+axios+lozyload+async-validator+vue-scroller
+vue2.0+vant+vue-router+axios+postcss-pxtorem+lozyload+async-validator+vue-scroller
 
 # vue-shop
 
