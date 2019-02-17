@@ -1,3 +1,7 @@
+技术栈
+
+vue2.0+vue-router+axios+lozyload+async-validator+vue-scroller
+
 # vue-shop
 
 > shopping
