@@ -5,30 +5,7 @@ Vue.use(Vuex);
 let store = new Vuex.Store({
     // 1. state
     state:{
-        evaluList:[
-            {
-                id: 1,
-                name: "乐购商城",
-                title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
-                price: 3500.00,
-                static: "已评价",
-                specif: "蓝色",
-                count: 2,
-                url: '',
-                icon: require('../assets/shop1.png')
-            },
-            {
-                id: 2,
-                name: "乐购商城",
-                title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
-                price: 3500.00,
-                static: "已评价",
-                specif: "蓝色",
-                count: 2,
-                url: '',
-                icon: require('../assets/shop1.png')
-            }
-        ]
+        evaluList:""
     },
 
     // 2. getters(此处方法给其他页面提供用户数据)
@@ -41,7 +18,7 @@ let store = new Vuex.Store({
     // 3. actions
     // 通常跟api接口打交道(此处方法给其他页面提供数据返回用户数据)
     actions:{
-        // 设置用户信息
+        // 设置评论
         // 参数列表：{commit, state}
         // state指的是state数据
         // commit调用mutations的方法 
@@ -63,3 +40,10 @@ let store = new Vuex.Store({
 });
 
 export default store;
+
+
+
+/**
+ * 备注：
+ *      vuex使用方法参照EvaluList.vue页面
+ */
