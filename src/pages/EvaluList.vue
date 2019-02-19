@@ -4,53 +4,28 @@
       <HeaderTwo :titleVal="title"></HeaderTwo>
     </div>
     <div class="page-content">
-        <div class="order-cell-list">
+        <div class="order-cell-list" v-for="(item,index) in evaluList" :key="index">
             <div class='order-cell'>
                 <div class='order-cell-store'>
                     <div class='store-img'>
                     <img class='img' src='../assets/order-icon.png'/>
                     </div>
-                    <div class='store-left'>乐购商城</div>
-                    <div class='store-right'>已评价</div>
+                    <div class='store-left'>{{item.name}}</div>
+                    <div class='store-right'>{{item.static}}</div>
                 </div>
                 <div class='order-cell-shop'>
                 <div class='shop-img'>
-                    <img class='img' src='../assets/shop1.png'/>
+                    <img class='img' :src="item.icon"/>
                 </div>
                 <div class='shop-fx'>
-                    <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
-                    <div class='shop-price'>￥3500.00</div>
-                    <div class='shop-specif'>蓝色<div class='count'>×2</div></div>
+                    <div class='shop-label'>{{item.title}}</div>
+                    <div class='shop-price'>￥{{item.price}}</div>
+                    <div class='shop-specif'>{{item.specif}}<div class='count'>×{{item.count}}</div></div>
                 </div>
-                <div class='shop-amount'>合计：￥7000.00</div>
-                </div>
-                <div class='order-cell-btn'>
-                  <router-link :to="{path:'/Evalu',query: {evaluId: 1}}">
-                    <button class='btn-zf'>查看</button>
-                  </router-link>
-                </div>
-            </div>
-            <div class='order-cell'>
-                <div class='order-cell-store'>
-                    <div class='store-img'>
-                    <img class='img' src='../assets/order-icon.png'/>
-                    </div>
-                    <div class='store-left'>乐购商城</div>
-                    <div class='store-right'>已评价</div>
-                </div>
-                <div class='order-cell-shop'>
-                <div class='shop-img'>
-                    <img class='img' src='../assets/shop1.png'/>
-                </div>
-                <div class='shop-fx'>
-                    <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
-                    <div class='shop-price'>￥3500.00</div>
-                    <div class='shop-specif'>蓝色<div class='count'>×2</div></div>
-                </div>
-                <div class='shop-amount'>合计：￥7000.00</div>
+                <div class='shop-amount'>合计：￥{{item.price*item.count}}</div>
                 </div>
                 <div class='order-cell-btn'>
-                  <router-link :to="{path:'/Evalu',query: {evaluId: 1}}">
+                  <router-link :to="{path:'/Evalu',query: {evaluId: item.id}}">
                     <button class='btn-zf'>查看</button>
                   </router-link>
                 </div>
@@ -70,6 +45,30 @@ export default {
   data () {
     return {
       title:"我的评价",   
+      evaluList:[
+        {
+            id: 1,
+            name: "乐购商城",
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3500.00,
+            static: "已评价",
+            specif: "蓝色",
+            count: 2,
+            url: '',
+            icon: require('../assets/shop1.png')
+        },
+        {
+            id: 2,
+            name: "乐购商城",
+            title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+            price: 3500.00,
+            static: "已评价",
+            specif: "蓝色",
+            count: 2,
+            url: '',
+            icon: require('../assets/shop1.png')
+        }
+      ]
     }
   },
   created () {

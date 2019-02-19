@@ -13,6 +13,11 @@ import axios from 'axios'
 // 改为原型组件使用方式
 Vue.prototype.$http = axios
 
+// 使用vuex机制
+import store from './store/store.js'
+// 注册vue-scroller中间件
+Vue.use(store)
+
 // 使用vue-scroller上拉刷新下拉加载
 import VueScroller from 'vue-scroller'
 // 注册vue-scroller中间件
@@ -21,7 +26,6 @@ Vue.use(VueScroller)
 // 全局工具类引用
 // rem基准值
 import './utils/rem'
-
 
 Vue.config.productionTip = false
 
