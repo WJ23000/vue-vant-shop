@@ -17,6 +17,15 @@ export default {
       isRouterAlive: true
     }
   },
+  created () {
+    
+  },
+  watch: {
+    $route(to, from) {
+      alert("路由跳转")
+      this.login();
+    }
+  },
   methods: {
     reload () {
       this.isRouterAlive=false
@@ -27,6 +36,12 @@ export default {
           message: '加载中...'
         })
       })
+    },
+    login () {
+      let loginMsg=this.$store.getters.getLoginFn;
+      if(loginMsg == null || loginMsg == ""){
+        this.$router.push('/Login');
+      }
     }
   }
 }
