@@ -75,22 +75,7 @@ export default {
     this.validator = validator(this.rules, this.formText);
   },
   mounted() {
-    //退出APP应用
-    mui.plusReady(() => {
-      var backcount = 0;
-      mui.back = () => {
-        if (mui.os.ios) return;
-        if (backcount > 0) {
-          if (window.plus) plus.runtime.quit();
-          return;
-        }
-        this.$toast("再点击一次退出应用");
-        backcount++;
-        setTimeout(() => {
-          backcount = 0;
-        }, 2000);
-      };
-    });
+    
   },
   methods: {
     //正则验证方法

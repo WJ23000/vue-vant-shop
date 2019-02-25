@@ -22,7 +22,6 @@ export default {
   },
   watch: {
     $route(to, from) {
-      alert("路由跳转")
       this.login();
     }
   },
@@ -38,7 +37,8 @@ export default {
       })
     },
     login () {
-      let loginMsg=this.$store.getters.getLoginFn;
+      let loginMsg=localStorage.getItem("isLogin");
+      console.log(loginMsg)
       if(loginMsg == null || loginMsg == ""){
         this.$router.push('/Login');
       }
