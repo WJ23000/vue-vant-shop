@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 //主页
+import Login from '@/pages/Login'
 import Index from '@/pages/Index'
 import Class from '@/pages/Class'
 import Cart from '@/pages/Cart'
@@ -31,6 +32,11 @@ export default new Router({
       path: '/',
       name: 'Index',
       component: Index
+    },
+    {
+      path: '/Login',
+      name: 'Login',
+      component: Login
     },
     {
       path: '/Class',

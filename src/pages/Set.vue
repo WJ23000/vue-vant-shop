@@ -42,7 +42,7 @@ export default {
       }).then(() => {
         var storage = window.localStorage;
         storage.clear();
-        this.$router.push({ path: '/' ,params:{id:"1"}});
+        this.$router.push('/');
       }).catch(() => {
         // on cancel
       });
