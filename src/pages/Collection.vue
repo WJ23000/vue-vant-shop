@@ -7,23 +7,40 @@
       <scroller :on-refresh="refresh" :on-infinite="infinite" ref="my_scroller" refresh-layer-color="#3982f6"
       loading-layer-color="#3982f6" style="top:44px;">
         <div class="collection-list" v-for="(item,index) in collectionList" :key="index">
-          <div class='order-cell'>
-              <div class='order-cell-shop'>
-                  <div class='shop-img'>
-                      <img class='img' :src="item.icon"/>
-                  </div>
-                  <div class='shop-fx'>
-                      <div class='shop-label'>{{item.title}}</div>
-                      <div class='shop-price'>￥{{item.price}}</div>
-                      <div class='shop-del' @click='del(index)'>删除</div>
-                      <router-link :to="{path:'/GoodsDetail',query: {goodsId: item.id}}">
-                          <span class='shop-buy'>查看</span>
-                      </router-link>
-                  </div>
-              </div>
+          <div v-if="showVal"></div>
+          <div v-else>
+          <div class='icon'>
+            <van-icon :name="iconXz" v-if="item.selected" @click="selectSingle" :data-index="index" size="20px"/>
+            <van-icon :name="iconWxz" v-else @click="selectSingle" :data-index="index" size="20px"/>
           </div>
+          </div>
+          <router-link :to="{path:'/GoodsDetail',query: {goodsId: item.id}}">
+            <div :class="showVal ?  curActive1 : curActive2">
+                <div class='order-cell-shop'>
+                    <div class='shop-img'>
+                        <img class='img' :src="item.icon"/>
+                    </div>
+                    <div class='shop-fx'>
+                        <div class='shop-label'>{{item.title}}</div>
+                        <div class='shop-price'>￥{{item.price}}</div>
+                    </div>
+                </div>
+            </div>
+          </router-link>
         </div> 
       </scroller>
+      <!-- 底部 -->
+      <div class="cart-bottom">
+        <div v-if="showVal">
+          <div class='cart-bottom-edit' @click='edit'>编辑</div>
+        </div>
+        <div v-else>
+          <div class='cart-bottom-cell' @click='cancel'>取消</div>
+          <div class='cart-bottom-cell' @click='selectAll'>全选</div>
+          <div class='cart-bottom-cell del-color' @click='del'>删除({{delCount}})</div>
+        </div>
+        
+      </div>
     </div>
   </div>
 </template>
@@ -46,7 +63,8 @@ export default {
             price: 3001.00,
             sell: 101,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         },
         {
             id: 2,
@@ -54,7 +72,8 @@ export default {
             price: 3002.00,
             sell: 102,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         },
         {
             id: 3,
@@ -62,7 +81,8 @@ export default {
             price: 3003.00,
             sell: 103,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         },
         {
             id: 4,
@@ -70,7 +90,8 @@ export default {
             price: 3004.00,
             sell: 104,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         },
         {
             id: 5,
@@ -78,7 +99,8 @@ export default {
             price: 3005.00,
             sell: 105,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         },
         {
             id: 6,
@@ -86,7 +108,8 @@ export default {
             price: 3006.00,
             sell: 106,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         }
       ],
       collectionListAdd: [
@@ -96,7 +119,8 @@ export default {
             price: 3007.00,
             sell: 107,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         },
         {
             id: 8,
@@ -104,7 +128,8 @@ export default {
             price: 3008.00,
             sell: 108,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         },
         {
             id: 9,
@@ -112,9 +137,17 @@ export default {
             price: 3009.00,
             sell: 109,
             url: '',
-            icon: require('../assets/shop1.png')
+            icon: require('../assets/shop1.png'),
+            selected: false
         }
-      ]    
+      ],
+      CheckAll: false,
+      delCount: 0,
+      showVal: true,
+      iconXz:require('../assets/check-xz.png'),
+      iconWxz:require('../assets/check-Wxz.png'),
+      curActive1: "order-cell order-active",
+      curActive2: "order-cell",    
     }
   },
   created () {
@@ -124,18 +157,71 @@ export default {
 
   },
   methods:{
-    //删除
-    del: function (indexVal) {
-      let collectionList = this.collectionList  //获取购物车列表
-      let index = indexVal  //获取当前点击事件的下标索引
-      collectionList.splice(index, 1)
-      this.collectionList= collectionList
-      if (collectionList.length) {
-          this.cartList= false
-      }
-      localStorage.setItem("collectionList", collectionList)
+    edit: function () {
+      this.showVal= false
+    },
+    cancel: function () {
+      this.showVal= true
     },
 
+    //全选
+    selectAll: function (e) {
+      let CheckAll = this.CheckAll;
+      CheckAll = !CheckAll
+      let collectionList = this.collectionList
+      for (let i = 0; i < collectionList.length; i++) {
+        collectionList[i].selected = CheckAll
+      }
+      this.collectionList= collectionList,
+      this.delList= collectionList,
+      this.CheckAll= CheckAll
+      //计算删除数量
+      this.delCollectionCount();
+    },
+
+    //单选
+    selectSingle: function (e) {
+      let collectionList = this.collectionList   //获取购物车列表
+      let index = e.currentTarget.dataset.index;  //获取当前点击事件的下标索引
+      let selected = collectionList[index].selected;    //获取当前点击事件的下标索引是否选中
+      //取反
+      collectionList[index].selected = !selected;
+      this.collectionList= collectionList,
+      this.delList= collectionList,
+      //计算删除数量
+      this.delCollectionCount();
+    },
+
+    //删除
+    del: function (e) {
+      let delState = true;
+      let collectionList = this.collectionList  //获取购物车列表
+      console.log(collectionList.length)
+      for (let i = 0; i < collectionList.length; i++) {
+        if (collectionList[i].selected == delState){
+          collectionList.splice(i, 1)
+          //更新删除数量数据
+          this.delCount= i
+          i=i-1;
+        }
+      }
+      this.collectionList= collectionList
+    },
+
+    //删除数量方法
+    delCollectionCount: function () {
+      let count = 0;
+      let i = 0;
+      for (i; i < this.collectionList.length; i++) {
+        if (this.collectionList[i].selected) {
+          count = count + 1;
+        }
+      }
+      //更新删除数量数据
+      this.delCount= count
+    },
+
+    //上拉刷新下拉加载方法
     refresh(done) {
       this.reload();
     },
@@ -168,7 +254,17 @@ export default {
   width: 100%;
   height: 140px;
 }
+.page-content{
+  float: left;
+  background: #ffffff;
+}
 .order-cell{
+  float: left;
+  width: 89%;  
+  background: #ffffff;
+  border-bottom: 1px solid #f2f2f2;
+}
+.order-active{
   float: left;
   width: 100%;  
   background: #ffffff;
@@ -293,5 +389,45 @@ export default {
   border: 1px solid #3982f6;
   font-size: 14px;
   border-radius: 25px;
+}
+.icon{
+  float: left;
+  width: 5%;
+  margin: 48px 10px;
+  background: #ffffff;
+}
+.icon-bj{
+  margin-top: 4px
+}
+/* 底部 */
+.cart-bottom{
+  position: fixed;
+  width: 100%;
+  height: 44px;
+  bottom:0;
+  background: #ffffff;
+  border-top: 1px solid #f2f2f2;
+}
+.cart-bottom-edit{
+  float: left;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 14px;
+  color: #3982f6
+}
+.cart-bottom-cell{
+  float: left;
+  width: 33.025%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+  border-right: 1px solid #f2f2f2; 
+}
+.del-color{
+  color: #3982f6
 }
 </style>
