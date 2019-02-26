@@ -1,7 +1,11 @@
 <template>
   <div class="page">
     <div class="page-header">
-      <Header :titleVal="title"></Header>
+      <van-nav-bar
+        :title="title"
+        right-text="编辑"
+        @click-right="onRightEdit"
+      />
     </div>
     <div class="page-content">
       <div v-for="(item,index) in cartItems" :key="index" class='cart-cell'>
@@ -26,28 +30,31 @@
                     <span @click='add' class="input cart-add"  :data-index="index">+</span>
                 </div>
               </div>
-
-              <div class='right'>
-                  <img src="../assets/del-icon.png" @click='shanchu' :data-index="index"/>
-              </div>
             </div>
 
           
             <!-- 底部 -->
-            <div class="cart-bottom">
-              <div class=cart-bottom-icon>
-                <van-icon :name="iconXz" v-if="CheckAll" @click="select" :data-index="index" size="20px"/>
-                <van-icon :name="iconWxz" v-else @click="select" :data-index="index"  size="20px"/>
+            <div v-if="showVal">
+              <div class="del-bottom">
+                <div class='cart-bottom-cell' @click='cancel'>取消</div>
+                <div class='cart-bottom-cell del-color' @click='del'>删除({{delCount}})</div>
               </div>
-              <div class='checkAll'>全选</div>
-              <div class='cart-sum'>
-                  <span class='sum_text'>合计：</span>
-                  <span class='sum_color'>￥{{total}}元</span>
+            </div>
+            <div v-else>
+              <div class="cart-bottom">
+                <div class=cart-bottom-icon>
+                  <van-icon :name="iconXz" v-if="CheckAll" @click="select" :data-index="index" size="20px"/>
+                  <van-icon :name="iconWxz" v-else @click="select" :data-index="index"  size="20px"/>
+                </div>
+                <div class='checkAll'>全选</div>
+                <div class='cart-sum'>
+                    <span class='sum_text'>合计：</span>
+                    <span class='sum_color'>￥{{total}}元</span>
+                </div>
+                <div class='cart-pay'>
+                  <span class='cart_pay' @click="payOrder" :data-id="item.id">结算({{goodsCount}})</span>
+                </div>
               </div>
-              <div class='cart-pay'>
-                <span class='cart_pay' @click="payOrder" :data-id="item.id">结算({{goodsCount}})</span>
-              </div>
-
             </div>
           </div>
       </div>
@@ -65,9 +72,6 @@
 import Header from '@/components/Header';
 export default {
   name: 'Cart',
-  components:{
-    Header
-  },
   data () {
     return {
       title:"购物车",
@@ -99,8 +103,11 @@ export default {
       total: 0,
       CheckAll: false,
       goodsCount: 0,
+      delCount: 0,
+      showVal: false,
       iconXz:require('../assets/check-xz.png'),
-      iconWxz:require('../assets/check-Wxz.png')
+      iconWxz:require('../assets/check-Wxz.png'),
+
     }
   },
   created () {
@@ -127,6 +134,8 @@ export default {
     this.getSumTotal()
     //计算商品数量
     this.getGoodsCount();
+    //计算删除数量
+      this.delGoodsCount();
     },
     //加
     add: function (e) {
@@ -170,14 +179,40 @@ export default {
       this.getSumTotal();
       //计算商品数量
       this.getGoodsCount();
+      //计算删除数量
+      this.delGoodsCount();
     },
+
     //删除
-    shanchu: function (e) {
-      var cartItems = this.cartItems  //获取购物车列表
-      var index = e.currentTarget.dataset.index  //获取当前点击事件的下标索引
-      cartItems.splice(index, 1)
+    del: function (e) {
+      let delState = true;
+      let cartItems = this.cartItems  //获取购物车列表
+      console.log(cartItems.length)
+      for (let i = 0; i < cartItems.length; i++) {
+        if (cartItems[i].selected == delState){
+          cartItems.splice(i, 1)
+          //更新删除数量数据
+          this.delCount= i
+          i=i-1;
+        }
+      }
+      this.cartItems= cartItems
     },
-    //提示
+
+    //删除数量方法
+    delGoodsCount: function () {
+      let count = 0;
+      let i = 0;
+      for (i; i < this.cartItems.length; i++) {
+        if (this.cartItems[i].selected) {
+          count = count + 1;
+        }
+      }
+      //更新删除数量数据
+      this.delCount= count
+    },
+
+    //结算
     payOrder: function () {
       this.$router.push({ path: '/PayOrder' ,params:{orderId:1}});
     },
@@ -205,6 +240,14 @@ export default {
       }
       //更新数据
       this.goodsCount= count
+    },
+    //编辑
+    onRightEdit (){
+      this.showVal= true
+    },
+    //取消删除功能
+    cancel () {
+      this.showVal= false
     }
   }
   
@@ -214,6 +257,12 @@ export default {
 .cart-main{
   float: left;
   width: 88%;
+}
+.cart-active{
+  float: left;
+  width: 100%;  
+  background: #ffffff;
+  border-bottom: 1px solid #f2f2f2;
 }
 .cart-image{
   width: 90px;
@@ -385,5 +434,45 @@ export default {
   border-bottom: 1px solid #ccc;
   padding: 10px 0px;
   box-sizing: border-box; 
+}
+.icon{
+  float: left;
+  width: 5%;
+  margin: 54px 10px;
+  background: #ffffff;
+}
+.icon-bj{
+  margin-top: 4px
+}
+/* 底部 */
+.del-bottom{
+  position: fixed;
+  width: 100%;
+  height: 44px;
+  bottom:50px;
+  background: #ffffff;
+  border-top: 1px solid #f2f2f2;
+}
+.cart-bottom-edit{
+  float: left;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 14px;
+  color: #3982f6
+}
+.cart-bottom-cell{
+  float: left;
+  width: 49.725%;
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  font-size: 14px;
+  color: #999999;
+  border-right: 1px solid #f2f2f2; 
+}
+.del-color{
+  color: #3982f6
 }
 </style>
