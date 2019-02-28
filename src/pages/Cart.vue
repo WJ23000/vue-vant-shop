@@ -8,6 +8,7 @@
       />
     </div>
     <div class="page-content">
+      <div v-if="cartItems.length > 0 ? true : false">
       <div v-for="(item,index) in cartItems" :key="index" class='cart-cell'>
         <div :data-id="item.id"  class='cart-box' :data-index="index">
             <div class='icon'>
@@ -57,6 +58,11 @@
               </div>
             </div>
           </div>
+      </div>
+      </div>
+      <!--如果无数据，则显示数据-->
+      <div class="nodata_text" v-else>
+        <img src='../assets/no-result.png'/>
       </div>
     </div>
     <van-tabbar v-model="active">
@@ -197,6 +203,9 @@ export default {
         }
       }
       this.cartItems= cartItems
+      this.total= 0,
+      this.goodsCount= 0,
+      this.CheckAll= false
     },
 
     //删除数量方法
@@ -435,6 +444,17 @@ export default {
   padding: 10px 0px;
   box-sizing: border-box; 
 }
+.nodata_text{
+  background: #ffffff;
+  color: black;
+  font-size: 14px;  
+  text-align: center;  
+} 
+.nodata_text img{
+  margin-top: 50px;
+  width: 44%;
+  height: 150px;
+} 
 .icon{
   float: left;
   width: 5%;
