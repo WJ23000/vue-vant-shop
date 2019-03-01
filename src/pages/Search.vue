@@ -5,12 +5,13 @@
         v-model="searchVal"
         placeholder="请输入搜索关键词"
         show-action
-        bind:search="onSearch"
+        v-on:input="onSearch"
       >
         <div slot="action" @click="onCancel">取消</div>
       </van-search>
     </div>
     <div class="page-content" style="background: #ffffff;">
+      <div v-if="showVal">
         <div class='search-history-title'>搜索历史</div>
         <div class='search-cell'>
           <div class='search-option'>手机</div>
@@ -19,6 +20,17 @@
           <div class='search-option'>首饰</div>
           <div class='search-option'>皮包</div>
         </div>
+      </div>
+      <div v-else>
+        <div v-for="(item,index) in searchListSet" :key="index">
+          <router-link :to="{path:'/SearchOrderList',query: {searchId: item.id}}">
+            <van-cell
+              :title="item.title"
+              :border="true"
+            />
+          </router-link>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -28,7 +40,27 @@ export default {
   name: 'Search',
   data () {
     return {
-      searchVal:""
+      searchVal:"",
+      searchList: [],
+      searchListSet:[
+        {
+          id: 1,
+          title: 'Iphone6sPlus'
+        },
+        {
+          id: 2,
+          title: '华为荣耀'
+        },
+        {
+          id: 3,
+          title: '一加'
+        },
+        {
+          id: 4,
+          title: 'OPPO'
+        }
+      ],
+      showVal: true
     }
   },
   created () {
@@ -38,6 +70,15 @@ export default {
   
   },
   methods:{
+    // 输入内容触发搜索
+    onSearch: function () {
+      if (this.searchVal.length > 0) {
+        this.showVal= false
+      } else {
+        this.showVal= true
+      }
+    },
+    // 返回首页
     onCancel: function () {
       this.$router.go(-1)
     }
