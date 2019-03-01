@@ -24,10 +24,11 @@
       <div v-else>
         <div v-for="(item,index) in searchListSet" :key="index">
           <router-link :to="{path:'/SearchOrderList',query: {searchId: item.id}}">
-            <van-cell
-              :title="item.title"
-              :border="true"
-            />
+            <van-cell-group>
+              <van-cell
+                :title="item.title"
+              />
+            </van-cell-group>
           </router-link>
         </div>
       </div>
