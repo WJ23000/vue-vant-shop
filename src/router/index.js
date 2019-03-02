@@ -11,6 +11,7 @@ import Search from '@/pages/Search'
 import SearchOrderList from '@/pages/SearchOrderList'
 import GoodsDetail from '@/pages/GoodsDetail'
 import PayOrder from '@/pages/PayOrder'
+import Comment from '@/pages/Comment'
 //Mine模块
 import OrderList from '@/pages/OrderList'
 import OrderDetail from '@/pages/OrderDetail'
@@ -117,6 +118,11 @@ export default new Router({
       path: '/PayOrder',
       name: 'PayOrder',
       component: PayOrder
+    },
+    {
+      path: '/Comment',
+      name: 'Comment',
+      component: Comment
     }
   ]
 })

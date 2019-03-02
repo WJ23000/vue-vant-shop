@@ -65,7 +65,7 @@
             </van-popup>
             <!-- 商品评价 -->
             <div class="separate"></div>
-            <van-cell title="商品评价(0)" size="large" :border="false"></van-cell>
+            <van-cell title="商品评价(0)" value="查看更多" to="/Comment" is-link size="large" :border="false"></van-cell>
             <div class="text-remark">东西还可以，好评~</div>
             <div class="separate"></div>
           </div>
