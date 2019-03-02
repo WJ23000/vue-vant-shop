@@ -1,7 +1,9 @@
 <template>
   <div class="page">
     <div class="page-header">
-      <van-search @click="tzSearch" placeholder="请输入搜索关键词"/>
+      <router-link to="/Search">
+        <van-search  placeholder="请输入搜索关键词" disabled="true"/>
+      </router-link>
     </div>
     <div class="page-content">
       <van-swipe :autoplay="3000">
@@ -126,10 +128,7 @@ export default {
 
   },
   methods:{
-    //跳转搜索页
-    tzSearch: function (){
-      this.$router.push({ path: '/Search' ,params:{id:"1"}});
-    }
+    
   }
   
 }
