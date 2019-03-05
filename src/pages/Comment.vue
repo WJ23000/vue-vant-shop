@@ -26,10 +26,18 @@
             <img src='../assets/no-result.png'/>
         </div>
         <!-- 底部评论框 -->
-        <!-- <div class="release" style='bottom:{{height}}px;'>
-            <input bindblur="bindInputBlur" bindfocus="bindInputFocus" adjust-position="{{adjustVal}}" cursor-spacing="0rpx" type="text" placeholder="请点此发布您的评论" confirm-hold="{{confirmVal}}" confirm-type="send" bindconfirm="bindSendDanmu" class='text'/>
-            <div bindtap="bindSendDanmu" class='submit'>发送</div>
-        </div> -->
+        <div class="page-footer">
+            <van-cell-group>
+                <van-field
+                    v-model="commentVal"
+                    center
+                    clearable
+                    placeholder="请发表您的评论"
+                >
+                    <van-button slot="button" size="small" type="primary" @click="onConfirm">发送</van-button>
+                </van-field>
+            </van-cell-group>
+        </div>
     </div>
   </div>
 </template>
@@ -43,81 +51,82 @@ export default {
   },
   data () {
     return {
-      title:"商品评价",
-      commentList:[
-        {
-            id: 1,
-            userImg: require('../assets/user.png'),
-            userName: "大黑",
-            content: "商品质量真的很不错1",
-            createTime: "2019-02-25 15:23:30",
-            likeNum: 554,
-            isLike: 1
-        },
-        {
-            id: 2,
-            userImg: require('../assets/user.png'),
-            userName: "二黑",
-            content: "商品质量真的很不错2",
-            createTime: "2019-02-26 17:23:30",
-            likeNum: 699,
-            isLike: 0
-        },
-        {
-            id: 3,
-            userImg: require('../assets/user.png'),
-            userName: "三黑",
-            content: "商品质量真的很不错3",
-            createTime: "2019-02-27 19:23:30",
-            likeNum: 255,
-            isLike: 1
-        },
-        {
-            id: 4,
-            userImg: require('../assets/user.png'),
-            userName: "四黑",
-            content: "商品质量真的很不错4",
-            createTime: "2019-02-25 15:23:30",
-            likeNum: 388,
-            isLike: 1
-        },
-        {
-            id: 5,
-            userImg: require('../assets/user.png'),
-            userName: "五黑",
-            content: "商品质量真的很不错5",
-            createTime: "2019-02-26 17:23:30",
-            likeNum: 552,
-            isLike: 0
-        },
-        {
-            id: 6,
-            userImg: require('../assets/user.png'),
-            userName: "六黑",
-            content: "商品质量真的很不错6",
-            createTime: "2019-02-27 19:23:30",
-            likeNum: 6666,
-            isLike: 1
-        },
-        {
-            id: 7,
-            userImg: require('../assets/user.png'),
-            userName: "五黑",
-            content: "商品质量真的很不错7",
-            createTime: "2019-02-26 17:23:30",
-            likeNum: 788,
-            isLike: 0
-        },
-        {
-            id: 8,
-            userImg: require('../assets/user.png'),
-            userName: "六黑",
-            content: "商品质量真的很不错8",
-            createTime: "2019-02-27 19:23:30",
-            likeNum: 866,
-            isLike: 1
-        }
+        title:"商品评价",
+        commentList:[
+            {
+                id: 1,
+                userImg: require('../assets/user.png'),
+                userName: "大黑",
+                content: "商家很靠谱，物美价廉、商品质量真的很不错，下次还会再来的",
+                createTime: "2019-02-25 15:23:30",
+                likeNum: 554,
+                isLike: 1
+            },
+            {
+                id: 2,
+                userImg: require('../assets/user.png'),
+                userName: "二黑",
+                content: "商品质量真的很不错2",
+                createTime: "2019-02-26 17:23:30",
+                likeNum: 699,
+                isLike: 0
+            },
+            {
+                id: 3,
+                userImg: require('../assets/user.png'),
+                userName: "三黑",
+                content: "商品质量真的很不错3",
+                createTime: "2019-02-27 19:23:30",
+                likeNum: 255,
+                isLike: 1
+            },
+            {
+                id: 4,
+                userImg: require('../assets/user.png'),
+                userName: "四黑",
+                content: "商品质量真的很不错4",
+                createTime: "2019-02-25 15:23:30",
+                likeNum: 388,
+                isLike: 1
+            },
+            {
+                id: 5,
+                userImg: require('../assets/user.png'),
+                userName: "五黑",
+                content: "商品质量真的很不错5",
+                createTime: "2019-02-26 17:23:30",
+                likeNum: 552,
+                isLike: 0
+            },
+            {
+                id: 6,
+                userImg: require('../assets/user.png'),
+                userName: "六黑",
+                content: "商品质量真的很不错6",
+                createTime: "2019-02-27 19:23:30",
+                likeNum: 6666,
+                isLike: 1
+            },
+            {
+                id: 7,
+                userImg: require('../assets/user.png'),
+                userName: "五黑",
+                content: "商品质量真的很不错7",
+                createTime: "2019-02-26 17:23:30",
+                likeNum: 788,
+                isLike: 0
+            },
+            {
+                id: 8,
+                userImg: require('../assets/user.png'),
+                userName: "六黑",
+                content: "商品质量真的很不错8",
+                createTime: "2019-02-27 19:23:30",
+                likeNum: 866,
+                isLike: 1
+            }
         ],
+        commentVal:"",
         okZan: require('../assets/ok-zan.png'),
         noZan: require('../assets/no-zan.png'),
         height: 0,
@@ -135,7 +144,10 @@ export default {
     
   },
   methods:{
-    
+    // 发送评论
+    onConfirm: function () {
+      this.$toast(this.commentVal)
+    }
   }
   
 }
@@ -145,7 +157,7 @@ export default {
     float: left;
     width: 100%;
     background: #ffffff;
-    margin-bottom: 54px;
+    margin-bottom: 50px;
 }
 .comment-cell{
     float: left;
@@ -168,15 +180,15 @@ export default {
 .nickname{
     float: left;
     width: 100px;
-    font-size: 14px;
+    font-size: 16px;
     color: #999999;
     margin-left: 10px;
-    margin-top: 8px;
+    margin-top: 5px;
 }
 .commentDetail{
     float: left;
     font-size: 13px;
-    margin-left: 55px
+    margin-left: 42px
 }
 .time-heart{ 
     float: left;
@@ -205,6 +217,7 @@ export default {
     font-size: 14px;
     display: inline-block; 
     color: #999999;
+    margin-top: 2px;
 }
 .comment-count{
     border-top: 1px solid #F9F9F9;
