@@ -253,6 +253,7 @@ export default {
   display: block;
   width: 100%;
   height: 140px;
+  background: #ffffff;
 }
 .page-content{
   float: left;

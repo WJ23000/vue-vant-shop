@@ -219,6 +219,9 @@ export default {
 }
 </script>
 <style scoped>
+body{
+  background: #f2f2f2;
+}
 .order-cell{
   float: left;
   width: 100%;  

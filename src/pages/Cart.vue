@@ -369,9 +369,12 @@ export default {
   width: 100%;
   height: 44px;
   bottom:50px;
-  background: #f2f2f2;
+  background: #ffffff;
   padding: 0px 10px;
   box-sizing: border-box;
+}
+.cart-bottom-icon{
+  margin-top: -3px;
 }
 .yuan{
   display: block;
@@ -458,7 +461,7 @@ export default {
 .icon{
   float: left;
   width: 5%;
-  margin: 54px 10px;
+  margin: 34px 10px;
   background: #ffffff;
 }
 .icon-bj{
