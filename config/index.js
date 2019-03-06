@@ -3,8 +3,6 @@
 // see http://vuejs-templates.github.io/webpack for documentation.
 
 const path = require('path')
-//版本号解决静态资源缓存问题
-const version = "1.0.1"
 
 module.exports = {
   dev: {
@@ -44,7 +42,7 @@ module.exports = {
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static' + version,
+    assetsSubDirectory: 'static',
     //assetsPublicPath: '/',
     //执行npm run build后的改动
     assetsPublicPath: './',
