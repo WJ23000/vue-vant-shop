@@ -65,9 +65,11 @@ export default {
         height: 38px;
         font-size: 14px;
         display:-webkit-box;
+        /*! autoprefixer: off */
         -webkit-box-orient:vertical;
-        -webkit-line-clamp:2;
+        /* autoprefixer: on */
         overflow:hidden;
+        -webkit-line-clamp:2;
     }
     .goods-grid .goods-price{
         float: left;

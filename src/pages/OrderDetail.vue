@@ -189,16 +189,13 @@ export default {
   width: 100%;
   padding-right: 15px;
   font-size: 14px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  display:-webkit-box;
+  /*! autoprefixer: off */
+  -webkit-box-orient:vertical;
+  /* autoprefixer: on */
+  overflow:hidden;
+  -webkit-line-clamp:2;
 }
-
-
-
-
-
 
 .order-cell{
   float: left;
@@ -249,10 +246,12 @@ export default {
 }
 .order-cell-shop .shop-fx .shop-label{
   font-size: 14px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
+  display:-webkit-box;
+  /*! autoprefixer: off */
+  -webkit-box-orient:vertical;
+  /* autoprefixer: on */
+  overflow:hidden;
+  -webkit-line-clamp:2;
 }
 .order-cell-shop .shop-fx .shop-price{
   font-size: 14px;
