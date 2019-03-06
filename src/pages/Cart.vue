@@ -25,7 +25,7 @@
                 <div class='left_box'>
                     <span class="cart-title">{{item.title}}</span>
                     <span class="cart-price">￥{{item.price}}</span>
-                    <span class="cart-specif">￥{{item.specif}}</span>
+                    <span class="cart-specif">{{item.specif}}</span>
                     <span @click='reduce'  class="input cart-reduce"  :data-index="index">-</span>
                     <span class="input cart-text">{{item.value}}</span>
                     <span @click='add' class="input cart-add"  :data-index="index">+</span>
@@ -98,7 +98,7 @@ export default {
           id: 2,
           title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
           price: 3500.00,
-          specif:"默认",
+          specif:"蓝色",
           value: 2,
           sell: 102,
           url: '',
@@ -304,10 +304,11 @@ export default {
   font-size: 15px;
   line-height: 17px;
   display:-webkit-box;
+  /*! autoprefixer: off */
   -webkit-box-orient:vertical;
-  -webkit-line-clamp:2;
+  /* autoprefixer: on */
   overflow:hidden;
-
+  -webkit-line-clamp:2;
 }
 .cart-price{
   display: flex;
