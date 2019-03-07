@@ -141,7 +141,8 @@ export default {
 .order-static{
   height: 90px;
   line-height: 90px;
-  background-image: url("http://pka5fbxmj.bkt.clouddn.com/order-bj.png");
+  /* background-image: url("http://pka5fbxmj.bkt.clouddn.com/order-bj.png"); */
+  background: #3982f6;
   background-size: 100% 100%;
   color: #ffffff;
   font-size: 16px;

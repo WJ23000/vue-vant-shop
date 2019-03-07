@@ -373,6 +373,7 @@ export default {
   background: #ffffff;
   padding: 0px 10px;
   box-sizing: border-box;
+  border-top: 1px solid #f2f2f2;
 }
 .cart-bottom-icon{
   margin-top: -3px;
