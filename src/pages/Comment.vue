@@ -13,7 +13,7 @@
                         <!-- <text class='comment-time'>{{item.createTime}}</text> -->
                     </div>
                     <span class='commentDetail'>{{item.content}}</span>
-                    <div class='time-heart'>
+                    <div class='time-heart' @click="likeZan" :data-index="index">
                         <span class='dianzan'>{{item.likeNum}}</span>
                         <img class='heart-icon' :src='okZan' v-if="item.isLike == 1"/>
                         <img class='heart-icon' :src='noZan' v-else/>
@@ -147,6 +147,25 @@ export default {
     // 发送评论
     onConfirm: function () {
       this.$toast(this.commentVal)
+    },
+    // 确认点赞和取消点赞
+    likeZan: function (e) {
+        let commentList = this.commentList  //获取评论列表
+        let index = e.currentTarget.dataset.index;
+        console.log(index);
+        let isLike = commentList[index].isLike;
+        console.log(isLike);
+        let onum = commentList[index].likeNum;
+        if (isLike) {
+            commentList[index].likeNum = (onum - 1);
+            commentList[index].isLike = false;
+            this.$toast("已取消点赞")
+        } else {
+            commentList[index].likeNum = (onum + 1);
+            commentList[index].isLike = true;
+            this.$toast("已点赞")
+        }
+        this.commentList=commentList
     }
   }
   

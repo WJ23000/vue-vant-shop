@@ -79,7 +79,8 @@
         </div>
         <!-- 底部悬浮栏 -->
         <van-goods-action>
-          <van-goods-action-mini-btn icon="star-o" text="收藏"/>
+          <van-goods-action-mini-btn icon="star" text="收藏" @click="addLike" v-if="isLike"/>
+          <van-goods-action-mini-btn icon="star-o" text="收藏" @click="addLike" v-else/>
           <van-goods-action-mini-btn icon="cart-o" text="购物车" @click="tzCart"/>
           <van-goods-action-big-btn text="加入购物车" @click="onCart"/>
           <van-goods-action-big-btn primary text="立即购买" @click="onBuy"/>
@@ -99,7 +100,8 @@ export default {
   data () {
     return {
       title:"商品详情",   
-      isLike: true,
+      goodsId:"",
+      isLike: false,
       images: [
         require('../assets/s-banner1.jpg'),
         require('../assets/s-banner2.jpg')
@@ -164,6 +166,7 @@ export default {
   },
   created () {
     this.$toast("商品id:"+this.$route.query.goodsId); 
+    this.goodsId=this.$route.query.goodsId;
   },
   mounted () {
     
@@ -195,7 +198,16 @@ export default {
     },
     //收藏
     addLike() {
-      this.isLike= !this.data.isLike
+      let likeId=this.goodsId;
+      console.log(likeId);
+      let likeState=this.isLike;
+      if(likeState == true){
+        this.isLike= !this.isLike;
+        this.$toast("已取消收藏")
+      }else{
+        this.isLike= !this.isLike;
+        this.$toast("收藏")
+      }  
     },
     //跳到购物车
     tzCart() {
