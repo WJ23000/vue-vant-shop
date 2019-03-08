@@ -70,7 +70,7 @@
                 />
             </van-cell-group>
         </div>
-        <div class='topPd' style='margin-top:20rpx;margin-bottom:90rpx;'>
+        <div class='topPd' style='margin-top:20rpx;'>
             <van-cell-group :border="false">
                 <van-cell
                     title="买家留言"
