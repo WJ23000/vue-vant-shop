@@ -105,10 +105,10 @@
                 />
             </van-cell-group>
         </div>
-        <div class='order-detail-btn'>
+        <!-- <div class='order-detail-btn'>
             <button class='goods-btn'>确认收货</button>
             <button open-type='contact' class='contact-btn'>联系商家</button>
-        </div>
+        </div> -->
     </div>
   </div>
 </template>
@@ -299,7 +299,6 @@ export default {
 .bottomPd{
   float: left;
   width: 100%;
-  background: #ffffff;
   padding: 0px 0px 10px 0px;
   box-sizing: border-box;
 }
