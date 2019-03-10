@@ -165,7 +165,10 @@ export default {
     }
   },
   created () {
-    this.$toast("商品id:"+this.$route.query.goodsId); 
+    this.$toast({
+      message:"商品id:"+this.$route.query.goodsId,
+      duration:500
+    }); 
     this.goodsId=this.$route.query.goodsId;
   },
   mounted () {
