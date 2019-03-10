@@ -152,11 +152,11 @@ export default {
     },
     viewSort: function (e) {
       if (this.viewIndex == 0) {
-        this.viewImg= require('../assets/view-kj.png'),
+        this.viewImg= require('../assets/view-hj.png'),
         this.viewIndex= 1,
         this.viewWay= true
       } else {
-        this.viewImg= require('../assets/view-hj.png'),
+        this.viewImg= require('../assets/view-kj.png'),
         this.viewIndex= 0,
         this.viewWay= false
       }

@@ -17,16 +17,41 @@
 <script>
 export default {
   name: "goodsList",
-  props: ["goodsListVal","viewWayVal"],
+  props: {
+    goodsListVal:{
+      type: Array
+    },
+    viewWayVal:{
+      type: Boolean
+    }
+  },
   data() {
     return {
-      goodsListData: this.goodsListVal,
-      viewWayData: this.viewWayVal,
+      goodsListData: [],
+      viewWayData: false,
       curActive1: "goods-grid-flex",
       curActive2: "goods-grid"
     };
   },
-  created() {}
+  created() {},
+  mounted() {
+    this.goodsListData=this.goodsListVal,
+    this.viewWayData=this.viewWayVal
+  },
+  watch: {
+    goodsListVal: {
+　　  immediate: true,
+      handler(val){
+        this.goodsListData=val
+      }
+　　},
+    viewWayVal: {
+　　  immediate: true,
+      handler(val){
+        this.viewWayData=val
+      }
+　　}
+  }
 };
 </script>
 <style>
