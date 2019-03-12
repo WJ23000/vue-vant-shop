@@ -132,9 +132,11 @@ export default {
   },
   created() {},
   mounted() {
+    // 监听scroll事件
     window.addEventListener('scroll', this.scrollToTop)
   },
   destroyed() {
+    // 销毁scroll事件
     window.removeEventListener('scroll', this.scrollToTop)
   },
   methods: {
@@ -178,8 +180,8 @@ export default {
   bottom: 60px;
   right: 15px;
   z-index: 2;
-  width: 50px;
-  height: 50px;
+  width: 44px;
+  height: 44px;
   opacity: 0.5;
 }
 </style>
