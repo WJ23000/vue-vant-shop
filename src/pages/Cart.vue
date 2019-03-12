@@ -65,7 +65,7 @@
         <img src='../assets/no-result.png'/>
       </div>
     </div>
-    <van-tabbar v-model="active">
+    <van-tabbar v-model="navActive">
       <van-tabbar-item :to="{path:'/'}" icon="shop-o">首页</van-tabbar-item>
       <van-tabbar-item :to="{path:'/Class'}" icon="apps-o">分类</van-tabbar-item>
       <van-tabbar-item :to="{path:'/Cart'}" icon="shopping-cart-o" info="5">购物车</van-tabbar-item>
@@ -81,7 +81,7 @@ export default {
   data () {
     return {
       title:"购物车",
-      active:2,
+      navActive:2,
       cartItems: [
         {
           id: 1,

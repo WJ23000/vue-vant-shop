@@ -56,6 +56,7 @@ export default {
   name: 'Class',
   data () {
     return {
+      navActive: 1,
       cateItems: [
         {
           cate_id: 1,
@@ -250,8 +251,7 @@ export default {
       curNav: 1,
       curIndex: 0,
       curActive1: "nav_left_items active",
-      curActive2: "nav_left_items",
-      navActive: 1
+      curActive2: "nav_left_items"
     }
   },
   created () {

@@ -236,7 +236,7 @@ export default {
     font-size: 14px;
     display: inline-block; 
     color: #999999;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 .comment-count{
     border-top: 1px solid #F9F9F9;
