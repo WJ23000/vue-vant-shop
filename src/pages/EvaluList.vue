@@ -4,6 +4,7 @@
       <HeaderTwo :titleVal="title"></HeaderTwo>
     </div>
     <div class="page-content">
+      <div v-if="evaluList.length > 0 ? true : false">
         <div class="order-cell-list" v-for="(item,index) in evaluList" :key="index">
             <div class='order-cell'>
                 <div class='order-cell-store'>
@@ -31,6 +32,11 @@
                 </div>
             </div>
         </div>
+      </div>
+      <!--如果无数据，则显示数据-->
+      <div class="nodata_text" v-else>
+        <img src='../assets/no-result.png'/>
+      </div>
     </div>
   </div>
 </template>

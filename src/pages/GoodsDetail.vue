@@ -85,6 +85,8 @@
           <van-goods-action-big-btn text="加入购物车" @click="onCart"/>
           <van-goods-action-big-btn primary text="立即购买" @click="onBuy"/>
         </van-goods-action>
+        <!-- backTop 回顶部的组件 -->
+        <ToTop/>
     </div>
   </div>
 </template>
@@ -92,10 +94,12 @@
 <script>
 import { ImagePreview } from 'vant';
 import HeaderTwo from '@/components/HeaderTwo';
+import ToTop from "@/components/ToTop";
 export default {
   name: 'GoodsDetail',
   components:{
-    HeaderTwo
+    HeaderTwo,
+    ToTop
   },
   data () {
     return {
