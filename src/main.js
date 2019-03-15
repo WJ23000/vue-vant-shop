@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vant from 'vant'
-import { Lazyload } from 'vant'
+import { VueLazyload  } from 'vant'
 import 'vant/lib/index.css'
 import '../src/styles/app.css'
 
@@ -34,7 +34,12 @@ Vue.config.devtools = true
 
 // 注册vant中间件
 Vue.use(Vant)
-Vue.use(Lazyload)
+Vue.use(VueLazyload, {
+  preLoad: 1.3,
+  error: 'dist/error-img.png',
+  loading: 'dist/loading.gif',
+  attempt: 1
+});
 
 /* eslint-disable no-new */
 new Vue({
