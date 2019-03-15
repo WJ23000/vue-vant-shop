@@ -197,7 +197,7 @@ export default {
   color:#333;
 }
 .sort-btn img{
-  margin-top: 4px;
+  margin-top: 2px;
   width: 20px;
   height: 36px;
   margin-left:3px;
