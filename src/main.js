@@ -4,7 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vant from 'vant'
-import { VueLazyload  } from 'vant'
+import VueLazyload from 'vue-lazyload'
 import 'vant/lib/index.css'
 import '../src/styles/app.css'
 
