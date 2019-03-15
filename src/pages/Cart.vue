@@ -19,7 +19,7 @@
             <div class='cart-main'>
               <div class='left'>
                 <div class='left_imgae'>
-                    <img class="cart-image" :src="item.icon"/>
+                    <img class="cart-image" v-lazy="item.icon"/>
                 </div>
 
                 <div class='left_box'>

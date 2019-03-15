@@ -28,7 +28,7 @@
                 <div class="nav_right_items">
                 <!--界面跳转 -->
                   <router-link :to="{path:'/SearchOrderList',query: {goodsId: item.child_id}}">
-                    <img :src="item.image"/>
+                    <img v-lazy="item.image"/>
                     <span>{{item.name}}</span>
                   </router-link>
                 </div>

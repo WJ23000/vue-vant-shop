@@ -18,7 +18,7 @@
             <div :class="showVal ?  curActive1 : curActive2">
                 <div class='order-cell-shop'>
                     <div class='shop-img'>
-                        <img class='img' :src="item.icon"/>
+                        <img class='img' v-lazy="item.icon"/>
                     </div>
                     <div class='shop-fx'>
                         <div class='shop-label'>{{item.title}}</div>

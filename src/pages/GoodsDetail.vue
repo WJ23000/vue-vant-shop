@@ -35,7 +35,7 @@
               <div class='specif-count'>
                 <div class='specif-header'>
                   <div class='specif-img'>
-                    <img class='img' :src='specif.img'/>
+                    <img class='img' v-lazy='specif.img'/>
                   </div>
                   <div class='specif-detail'>
                     <div class='specif-price'>￥{{specif.price}}</div>
@@ -73,7 +73,7 @@
           <div style='margin-top:10px;margin-bottom:50px;'>
             <van-cell title="商品详情" size="large"></van-cell>
             <div v-for="(item, index) in detailImg" :key="index">
-              <img class="image_detail" :src="item.img"/>
+              <img class="image_detail" v-lazy="item.img"/>
             </div>
           </div>
         </div>

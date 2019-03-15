@@ -8,15 +8,15 @@
             <div v-for="(item,index) in commentList" :key="index">
                 <div class='comment-cell'>
                     <div class='user-nickname'>
-                        <img class='user-icon' :src='item.userImg'/>
+                        <img class='user-icon' v-lazy='item.userImg'/>
                         <span class='nickname'>{{item.userName}}</span>
                         <!-- <text class='comment-time'>{{item.createTime}}</text> -->
                     </div>
                     <span class='commentDetail'>{{item.content}}</span>
                     <div class='time-heart' @click="likeZan" :data-index="index">
                         <span class='dianzan'>{{item.likeNum}}</span>
-                        <img class='heart-icon' :src='okZan' v-if="item.isLike == 1"/>
-                        <img class='heart-icon' :src='noZan' v-else/>
+                        <img class='heart-icon' v-lazy='okZan' v-if="item.isLike == 1"/>
+                        <img class='heart-icon' v-lazy='noZan' v-else/>
                     </div>
                 </div>
             </div>

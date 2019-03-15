@@ -3,7 +3,7 @@
     <div :class="viewWayData ? curActive1 : curActive2" v-for="(item,index) in goodsListData" :key="index">
       <router-link :to="{path:'/GoodsDetail',query: {goodsId: item.id}}">
         <div class="goods-icon">
-          <img :src="item.icon">
+          <img v-lazy="item.icon">
         </div>
         <div class="goods-detail">
           <span class="goods-title">{{item.title}}</span>

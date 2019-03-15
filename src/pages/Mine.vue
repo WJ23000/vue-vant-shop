@@ -4,7 +4,7 @@
       <div class="tx">
         <div class="mine-header" style="margin-top:20px;">
           <div class="mine-left">
-            <img class="mine-img" :src="userImg">
+            <img class="mine-img" v-lazy="userImg">
           </div>
           <div class="mine-right" style="margin-top:2px;">
             <div class="mine-welcome">您好,</div>
@@ -17,7 +17,7 @@
           <div class="weui-grid" v-for="(item,index) in gridsList" :key="index">
             <router-link :to="{path:'/OrderList',query: {indexId: item.id}}">
               <div class="weui-grid__icon">
-                <img :src="item.icon">
+                <img v-lazy="item.icon">
               </div>
               <span class="weui-grid__label">{{item.name}}</span>
             </router-link>

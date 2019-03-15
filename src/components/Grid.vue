@@ -1,7 +1,7 @@
 <template>
     <div class="sudoku_row"  >
         <div class="sudoku_item " :class="curSelect==sudoku.id?'opacity':''" v-for="(sudoku,index) in sudokus" :key="index" @touchstart="touchstart(index)" @touchend="touchend">
-            <img :src="sudoku.img_src" width="40" height="40" >
+            <img v-lazy="sudoku.img_src" width="40" height="40" >
             <span class="sudoku_title">{{sudoku.name}}</span>
         </div>
     </div> 

@@ -10,14 +10,14 @@
         </div>
         <div class='sort-btn' :data-index="sortIndex1" @click="searchSort1">
           销量
-          <img :src="sortImg1"/>
+          <img v-lazy="sortImg1"/>
         </div>
         <div class='sort-btn' :data-index="sortIndex2" @click="searchSort2">
           价格
-          <img :src="sortImg2"/>
+          <img v-lazy="sortImg2"/>
         </div>
         <div class='sort-btn' :data-index="viewIndex" @click="viewSort">
-          <img :src="viewImg" class='view-Img'/>
+          <img v-lazy="viewImg" class='view-Img'/>
         </div>
       </div>
       <div style="float:left;">
