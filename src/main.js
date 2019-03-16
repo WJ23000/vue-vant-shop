@@ -37,7 +37,7 @@ Vue.use(Vant)
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: require('../dist/error-img.png'),
-  loading: require('../dist/loading.gif'),
+  loading: require('../dist/loading.png'),
   attempt: 1
 });
 
