@@ -21,7 +21,8 @@ export default {
     }
   },
   created () {
-    
+    // 关闭页面加载动画
+    document.body.removeChild(document.getElementById('Loading'))
   },
   watch: {//使用watch 监听$router的变化
     $route(to, from) {
