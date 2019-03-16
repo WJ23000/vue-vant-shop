@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <div class="page-content">
-      <van-swipe :autoplay="3000">
+      <van-swipe :autoplay="3000" :height="213">
         <van-swipe-item v-for="(image, index) in images" :key="index">
           <img v-lazy="image.url">
         </van-swipe-item>
