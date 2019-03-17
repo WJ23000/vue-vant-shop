@@ -7,6 +7,7 @@ import Vant from 'vant'
 import VueLazyload from 'vue-lazyload'
 import 'vant/lib/index.css'
 import '../src/styles/app.css'
+import '../src/styles/font.css'
 
 // 使用axios请求方式
 import axios from 'axios'
