@@ -4,14 +4,8 @@
       <HeaderTwo :titleVal="title"></HeaderTwo>
     </div>
     <div class="page-content">
-        <div class="mine-cell">
-          <router-link to="/BindPhone">
-            <van-cell title="绑定手机号" is-link />
-          </router-link>
-        </div>
-        <div class="mine-cell">
-          <van-cell title="清除缓存" @click="clearCache" is-link />
-        </div>
+      <van-cell title="绑定手机号" is-link :to="{path:'/BindPhone'}"/>
+      <van-cell title="清除缓存" @click="clearCache" is-link/>
     </div>
   </div>
 </template>
