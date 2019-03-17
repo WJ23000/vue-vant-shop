@@ -15,8 +15,8 @@
                     <span class='commentDetail'>{{item.content}}</span>
                     <div class='time-heart' @click="likeZan" :data-index="index">
                         <span class='dianzan'>{{item.likeNum}}</span>
-                        <img class='heart-icon' v-lazy='okZan' v-if="item.isLike == 1"/>
-                        <img class='heart-icon' v-lazy='noZan' v-else/>
+                        <img class='heart-icon' :src='okZan' v-if="item.isLike == 1"/>
+                        <img class='heart-icon' :src='noZan' v-else/>
                     </div>
                 </div>
             </div>
