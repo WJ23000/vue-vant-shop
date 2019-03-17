@@ -25,61 +25,11 @@
         </div>
       </div>
       <div>
-        <div class="mine-cell">
-          <router-link to="/EvaluList">
-            <van-notice-bar
-              :left-icon="require('../assets/mine-evalu.png')"
-              background="#ffffff"
-              color="#333333"
-              mode="link"
-              text="我的评价"
-            />
-          </router-link>
-        </div>
-        <div class="mine-cell">
-          <router-link to="/Address">
-            <van-notice-bar
-              :left-icon="require('../assets/mine-address.png')"
-              background="#ffffff"
-              color="#333333"
-              mode="link"
-              text="收货地址"
-            />
-          </router-link>
-        </div>
-        <div class="mine-cell">
-          <router-link to="/Collection">
-            <van-notice-bar
-              :left-icon="require('../assets/mine-collection.png')"
-              background="#ffffff"
-              color="#333333"
-              mode="link"
-              text="我的收藏"
-            />
-          </router-link>
-        </div>
-        <div class="mine-cell">
-          <router-link to="#">
-            <van-notice-bar
-              :left-icon="require('../assets/mine-code.png')"
-              background="#ffffff"
-              color="#333333"
-              mode="link"
-              text="我的邀请码"
-            />
-          </router-link>
-        </div>
-        <div class="mine-cell">
-          <router-link to="/Set">
-            <van-notice-bar
-              :left-icon="require('../assets/mine-set.png')"
-              background="#ffffff"
-              color="#333333"
-              mode="link"
-              text="设置"
-            />
-          </router-link>
-        </div>
+        <van-cell title="我的评价" :icon="require('../assets/mine-evalu.png')" is-link :to="{path:'/EvaluList'}"/>
+        <van-cell title="收货地址" :icon="require('../assets/mine-address.png')" is-link :to="{path:'/Address'}"/>
+        <van-cell title="我的收藏" :icon="require('../assets/mine-collection.png')" is-link :to="{path:'/Collection'}"/>
+        <van-cell title="我的邀请码" :icon="require('../assets/mine-code.png')" is-link :to="{path:'#'}"/>
+        <van-cell title="设置" :icon="require('../assets/mine-set.png')" is-link :to="{path:'/Set'}"/>
       </div>
     </div>
     <van-tabbar v-model="navActive">
