@@ -35,22 +35,22 @@
               <div class='specif-count'>
                 <div class='specif-header'>
                   <div class='specif-img'>
-                    <img class='img' v-lazy='specif.img'/>
+                    <img class='img' v-lazy='specifImg'/>
                   </div>
                   <div class='specif-detail'>
-                    <div class='specif-price'>￥{{specif.price}}</div>
-                    <div class='specif-inventory'>库存{{specif.inventory}}件</div>
-                    <div class='specif-title'>{{specif.title}}</div>
+                    <div class='specif-price'>￥{{specifPrice}}</div>
+                    <div class='specif-inventory'>库存{{specifStock}}件</div>
+                    <div class='specif-title'>{{specifTitle}}</div>
                   </div>
                   <div class='specif-close-icon'>
                     <van-icon name="close" size="20px" @click='closeSpecif'/>
                   </div>
                 </div>
-                <div class='specif-cation'>
-                  <div class='search-history-title'>规格</div>
-                  <div class='search-cell' v-for="(item, index) in specifDetail" :key="index">
-                    <div :class="curNav == item.specif_id ?  curActive1 : curActive2" @click="xzSpecif(item.specif_id,index,item.img,item.price,item.name,item.inventory)" >{{item.name}}</div>
-                  </div>
+                <div class='specif-cation' v-for="(pItem, findex) in specif_list" :key="findex">
+                  <div class='search-history-title'>{{pItem.pName}}</div>
+                  <ul class='search-cell' v-for="(oItem, zindex) in pItem.info" :key="zindex">
+                    <li @click="xzSpecif(oItem.spec_id,findex,$event,zindex)" :class="[oItem.isShow?'':'noneActive',subIndex[findex] == zindex?'productActive':'']">{{oItem.spec_val}}</li>
+                  </ul>
                 </div>
                 <div style='margin-bottom:44px;'>
                   <van-cell title="数量" size="large">
@@ -116,82 +116,156 @@ export default {
         {img:require('../assets/sp-detail2.png')}
       ],
       // 规格
-      specif: {
-        img: require('../assets/shop1.png'),
-        title: "选择 规格参数",
-        price: "3500-4000",
-        inventory: "5000"
-      },
-      specifDetail: [
+      specifImg: require('../assets/shop1.png'),
+      specifTitle: "选择 规格参数",
+      specifPrice: "3500-4000",
+      specifStock: "5000",
+      skuId: "",
+      sku_list: [
         {
-          specif_id: 1,
-          img: require('../assets/shop1.png'),
-          name: "星空蓝",
-          price: "3501.00",
-          inventory: "881"
-        }, 
-        {
-          specif_id: 2,
-          img: require('../assets/shop1.png'),
-          name: "炫紫",
-          price: "3502.00",
-          inventory: "882"
+          id: 1,
+          sku_id: 1001001,
+          img: "/image/shop1.png",
+          title: "亮黑色 至尊版",
+          price: 3000,
+          stock: 10,
+          spec_key:"101,101"
         },
         {
-          specif_id: 3,
-          img: require('../assets/shop1.png'),
-          name: "玫瑰金",
-          price: "3503.00",
-          inventory: "883"
+          id: 2,
+          sku_id: 1001002,
+          img: "/image/shop1.png",
+          title: "亮黑色 荣耀版",
+          price: 4000,
+          stock: 0,
+          spec_key: "101,102"
         },
         {
-          specif_id: 4,
-          img: require('../assets/shop1.png'),
-          name: "星空灰",
-          price: "3504.00",
-          inventory: "884"
+          id: 3,
+          sku_id: 1001003,
+          img: "/image/shop1.png",
+          title: "炫紫色 至尊版",
+          price: 5000,
+          stock: 20,
+          spec_key: "102,101"
         },
         {
-          specif_id: 5,
-          img: require('../assets/shop1.png'),
-          name: "炫黑",
-          price: "3505.00",
-          inventory: "885"
-        },
+          id: 4,
+          sku_id: 1001004,
+          img: "/image/shop1.png",
+          title: "炫紫色 荣耀版",
+          price: 6000,
+          stock: 15,
+          spec_key: "102,102"
+        }
       ],
-      curNav: 0,
-      curIndex: 0,
-      curActive1: "search-option active",
-      curActive2: "search-option",
+      specif_list: [
+        {
+          pId: 101,
+          pName: "颜色",
+          info: [
+            {
+              id: 0,
+              spec_id: 101,
+              spec_val: "亮黑色",
+              is_click: 0
+            },
+            {
+              id: 1,
+              spec_id: 102,
+              spec_val: "炫紫色",
+              is_click: 0
+            }
+          ]      
+        },
+        {
+          pId: 102,
+          pName: "版本",
+          info: [
+            {
+              spec_id: 101,
+              spec_val: "至尊版",
+              is_click: 0
+            },
+            {
+              spec_id: 102,
+              spec_val: "荣耀版",
+              is_click: 0
+            }
+          ]
+        }
+      ],
+      selectArr: [], //存放被选中的值
+      shopItemInfo: {}, //存放要和选中的值进行匹配的数据
+      subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
+
+
       show: false,
       specifValue: 1,
       specifCount: 1
     }
   },
   created () {
-    this.$toast({
-      message:"商品id:"+this.$route.query.goodsId,
+    let that = this;
+    that.$toast({
+      message:"商品id:"+that.$route.query.goodsId,
       duration:500
     }); 
-    this.goodsId=this.$route.query.goodsId;
+    that.goodsId=that.$route.query.goodsId;
+
+    // 商品规格初始化
+    
+    for (var i in that.sku_list) {
+      that.shopItemInfo[that.sku_list[i].spec_key] = that.sku_list[i]; //修改数据结构格式，改成键值对的方式，以方便和选中之后的值进行匹配
+    }
+    that.checkItem();
   },
   mounted () {
     
   },
   methods:{
-    // 获取当前选中的规格参数
-    xzSpecif: function (id,index,img,price,name,inventory) {
-      // 获取item项的id，和数组的下标值  
-      var id = id,
-      index = parseInt(index);
-      // 把点击到的某一项，设为当前index  
-      this.curNav= id,
-      this.curIndex= index,
-      this.specif.price= price,
-      this.specif.inventory= inventory,
-      this.specif.title= '已选:"'+name+'"',  
-      console.log(id,index,img,price,name,inventory);
+    // 获取当前选中的规格参数z
+    xzSpecif: function (item, findex, event, zindex) {
+      let that = this;
+      if (that.selectArr[findex] != item) {
+          that.selectArr[findex] = item;
+          that.subIndex[findex] = zindex;
+
+      } else {
+          that.selectArr[findex] = "";
+          that.subIndex[findex] = -1; //去掉选中的颜色 
+      }
+      that.checkItem();
     },
+    checkItem: function () {
+        let that = this;
+        var option = that.specif_list;
+        var result = [];  //定义数组存储被选中的值
+        for (var i in option) {
+            result[i] = that.selectArr[i] ? that.selectArr[i] : '';
+        }
+        for (var i in option) {
+            var last = result[i];  //把选中的值存放到字符串last去
+            for (var k in option[i].info) {
+                result[i] = option[i].info[k].spec_id; //赋值，存在直接覆盖，不存在往里面添加name值
+                option[i].info[k].isShow = that.isMay(result); //在数据里面添加字段isShow来判断是否可以选择
+            }
+            result[i] = last; //还原，目的是记录点下去那个值，避免下一次执行循环时避免被覆盖
+
+        }
+        that.$forceUpdate(); //重绘
+    },
+    isMay: function (result) {
+        for (var i in result) { 
+            if (result[i] == '') {
+                return true; //如果数组里有为空的值，那直接返回true
+            }
+        }
+        return this.shopItemInfo[result].stock == 0 ? false : true; //匹配选中的数据的库存，若不为空返回true反之返回false
+    },
+
+
+
     //打开商品规格和购买数量
     onSpecif: function () {  
       this.show= true
@@ -387,21 +461,30 @@ button {
   padding: 10px 15px;
   box-sizing: border-box;
 }
-.search-cell .search-option{
+.search-cell li{
   float: left;
   margin: 5px 15px;
   text-align: center;
   padding: 5px 15px;
   font-size: 14px;
-  background: #f2f2f2;
-  color: #666666;
-  border-radius: 25px;
+  border: 1px solid #606060;
+  border-radius: 0.08rem;
+  color: #606060;
 }
 /*规格item被选中时*/  
-.search-cell .search-option.active{  
-  background: #3982f6;  
-  color: #ffffff; 
-}  
+.search-cell li.productActive {
+    background-color: #1A1A29;
+    color: #fff;
+    border: 1px solid #1A1A29;
+}
+.search-cell li.noneActive {
+    background-color: #ccc;
+    opacity: 0.4;
+    color: #000;
+    pointer-events: none;
+}
+
+
 
 .van-button--danger{
   background-color: #3982f6 !important;
