@@ -195,6 +195,7 @@ export default {
           ]
         }
       ],
+      arrId: [],
       selectArr: [], //存放被选中的值
       shopItemInfo: {}, //存放要和选中的值进行匹配的数据
       subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
@@ -235,33 +236,54 @@ export default {
           that.selectArr[findex] = "";
           that.subIndex[findex] = -1; //去掉选中的颜色 
       }
+
+      //  初始化arrId
+      let arrId = that.arrId;
+      // 把点击的规格名称和规格id存起来
+      arrId[findex] = item;
+      // 拼接规格id，（后台返回的数据是这个）
+      let selectGuigeId = arrId.join(',');
+      // 匹配skuId
+      for (let i = 0; i < that.sku_list.length; i++) {
+        // 找对应的规格组合
+        if (that.sku_list[i].spec_key == selectGuigeId) {
+          let guilists = that.sku_list[i];
+          //设置规格预览效果
+          that.skuId = guilists.sku_id;
+          that.specifImg = guilists.img;
+          that.specifPrice = guilists.price;
+          that.specifStock = guilists.stock;
+          that.specifTitle = '已选:"'+guilists.title+'"';
+        }
+      }
       that.checkItem();
     },
     checkItem: function () {
-        let that = this;
-        var option = that.specif_list;
-        var result = [];  //定义数组存储被选中的值
-        for (var i in option) {
-            result[i] = that.selectArr[i] ? that.selectArr[i] : '';
-        }
-        for (var i in option) {
-            var last = result[i];  //把选中的值存放到字符串last去
-            for (var k in option[i].info) {
-                result[i] = option[i].info[k].spec_id; //赋值，存在直接覆盖，不存在往里面添加name值
-                option[i].info[k].isShow = that.isMay(result); //在数据里面添加字段isShow来判断是否可以选择
-            }
-            result[i] = last; //还原，目的是记录点下去那个值，避免下一次执行循环时避免被覆盖
-
-        }
-        that.$forceUpdate(); //重绘
+      let that = this;
+      var option = that.specif_list;
+      var result = [];  //定义数组存储被选中的值
+      for (var i in option) {
+          result[i] = that.selectArr[i] ? that.selectArr[i] : '';
+      }
+      for (var i in option) {
+          var last = result[i];  //把选中的值存放到字符串last去
+          for (var k in option[i].info) {
+              result[i] = option[i].info[k].spec_id; //赋值，存在直接覆盖，不存在往里面添加name值
+              option[i].info[k].isShow = that.isMay(result); //在数据里面添加字段isShow来判断是否可以选择
+          }
+          result[i] = last; //还原，目的是记录点下去那个值，避免下一次执行循环时避免被覆盖
+      }
+      that.$forceUpdate(); //重绘
     },
     isMay: function (result) {
-        for (var i in result) { 
-            if (result[i] == '') {
-                return true; //如果数组里有为空的值，那直接返回true
-            }
-        }
-        return this.shopItemInfo[result].stock == 0 ? false : true; //匹配选中的数据的库存，若不为空返回true反之返回false
+      let that = this;
+      let guilists = {};
+      for (var i in result) { 
+          if (result[i] == '') {
+              return true; //如果数组里有为空的值，那直接返回true
+          }
+      }
+      return that.shopItemInfo[result].stock == 0 ? false : true; //匹配选中的数据的库存，若不为空返回true反之返回false  
     },
 
 
@@ -473,9 +495,9 @@ button {
 }
 /*规格item被选中时*/  
 .search-cell li.productActive {
-    background-color: #1A1A29;
+    background-color: #ff976a;
     color: #fff;
-    border: 1px solid #1A1A29;
+    border: 1px solid #ff976a;
 }
 .search-cell li.noneActive {
     background-color: #ccc;
