@@ -254,6 +254,7 @@ export default {
           that.specifPrice = guilists.price;
           that.specifStock = guilists.stock;
           that.specifTitle = '已选:"'+guilists.title+'"';
+          that.specifValue = '已选:"'+guilists.title+'"';
         }
       }
       that.checkItem();
