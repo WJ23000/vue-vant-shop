@@ -35,7 +35,7 @@
               <div class='specif-count'>
                 <div class='specif-header'>
                   <div class='specif-img'>
-                    <img class='img' v-lazy='specifImg'/>
+                    <img class='img' v-lazy='specifImg' @click="specifImgPreview(specifImg)"/>
                   </div>
                   <div class='specif-detail'>
                     <div class='specif-price'>￥{{specifPrice}}</div>
@@ -214,7 +214,7 @@ export default {
     }); 
     that.goodsId=that.$route.query.goodsId;
 
-    // 商品规格初始化
+    //商品规格初始化
     
     for (var i in that.sku_list) {
       that.shopItemInfo[that.sku_list[i].spec_key] = that.sku_list[i]; //修改数据结构格式，改成键值对的方式，以方便和选中之后的值进行匹配
@@ -225,7 +225,7 @@ export default {
     
   },
   methods:{
-    // 获取当前选中的规格参数z
+    //获取当前选中的规格参数z
     xzSpecif: function (item, findex, event, zindex) {
       let that = this;
       if (that.selectArr[findex] != item) {
@@ -237,15 +237,15 @@ export default {
           that.subIndex[findex] = -1; //去掉选中的颜色 
       }
 
-      //  初始化arrId
+      //初始化arrId
       let arrId = that.arrId;
-      // 把点击的规格名称和规格id存起来
+      //把点击的规格名称和规格id存起来
       arrId[findex] = item;
-      // 拼接规格id，（后台返回的数据是这个）
+      //拼接规格id（后台返回的数据是这个）
       let selectGuigeId = arrId.join(',');
-      // 匹配skuId
+      //匹配skuId
       for (let i = 0; i < that.sku_list.length; i++) {
-        // 找对应的规格组合
+        //找对应的规格组合
         if (that.sku_list[i].spec_key == selectGuigeId) {
           let guilists = that.sku_list[i];
           //设置规格预览效果
@@ -324,9 +324,15 @@ export default {
     onBuy() {
       this.show= true
     },
-    //图片预览
+    //轮播图图片预览
     swipeImgPreview: function () {
       ImagePreview(this.images);
+    },
+    //商品规格图片预览
+    specifImgPreview: function (img) {
+      let imgArray = [];
+      imgArray.push(img)
+      ImagePreview(imgArray);
     }
   }
   
@@ -485,7 +491,7 @@ button {
 }
 .search-cell li{
   float: left;
-  margin: 5px 15px;
+  margin: 5px 0px 5px 15px;
   text-align: center;
   padding: 5px 15px;
   font-size: 14px;
