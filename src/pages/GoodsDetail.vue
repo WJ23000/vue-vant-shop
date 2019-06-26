@@ -215,7 +215,6 @@ export default {
     that.goodsId=that.$route.query.goodsId;
 
     //商品规格初始化
-    
     for (var i in that.sku_list) {
       that.shopItemInfo[that.sku_list[i].spec_key] = that.sku_list[i]; //修改数据结构格式，改成键值对的方式，以方便和选中之后的值进行匹配
     }
