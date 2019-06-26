@@ -202,7 +202,7 @@ export default {
 
 
       show: false,
-      specifValue: 1,
+      specifValue: "选择 商品规格",
       specifCount: 1
     }
   },
