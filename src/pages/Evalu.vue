@@ -30,12 +30,15 @@
                   v-model="formText.leave"
                   name="leave"
                   clearable
-                  label="留言"
                   type="textarea"
-                  placeholder="请输入留言"
+                  placeholder="留个言给其他小伙伴做个参考呗"
                   rows="1"
                   autosize
+                  :border="false"
                 />
+                <div class="evalu-upload">
+                  <van-uploader :after-read="afterRead" v-model="fileList" multiple/>
+                </div>
                 <van-switch-cell
                   v-model="formText.checked"
                   name="switch"
@@ -48,6 +51,7 @@
             </div>
           </form>
         </div>
+        
     </div>
   </div>
 </template>
@@ -100,7 +104,8 @@ export default {
         leave: [
           {required: true, message: '请输入留言'}
         ]
-      }
+      },
+      fileList: []
     }
   },
   created () {
@@ -110,7 +115,7 @@ export default {
 
   },
   methods:{
-    //正则验证方法
+    // 正则验证方法
     validate(callback, data) {
       this.validator.validate((errors, fields) => {
         if (errors) {
@@ -121,9 +126,9 @@ export default {
         callback && callback(errors, fields)
       }, data);
     },
-    //提交表单
+    // 提交表单
     formSubmitEvalu: function() {
-      //触发表单正则校验且通过校验提交数据
+      // 触发表单正则校验且通过校验提交数据
       this.validate((errors, fields) => {
         console.log(fields.length);
         if(fields.length==0){
@@ -134,18 +139,26 @@ export default {
         }
       })
     },
-    //星形评分
+    // 星形评分
     onDesc: function (value) {
       this.descScore= value
     },
     onTude: function (value) {
       this.tudeScore= value
+    },
+    // 图片上传
+    afterRead(file) {
+      // 此时可以自行将文件上传至服务器
+      console.log(file);
     }
   }
   
 }
 </script>
 <style scoped>
+.page{
+  background: #f2f2f2;
+}
 .order-cell{
   float: left;
   width: 100%;  
@@ -248,5 +261,9 @@ export default {
   text-align: center;
   border: 0;
   border-radius: 0;
+}
+.evalu-upload{
+  padding: 10px 15px;
+  border-bottom: 1px solid #f2f2f2;
 }
 </style>

@@ -97,6 +97,9 @@ export default {
 }
 </script>
 <style scoped>
+.page{
+  background: #f2f2f2;
+}
 .order-cell-list{
   float: left;
   width: 100%;  

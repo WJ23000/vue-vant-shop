@@ -58,8 +58,17 @@
                   </van-cell>
                 </div>
                 <van-goods-action>
-                  <van-goods-action-big-btn text="加入购物车" @click="onCart"/>
-                  <van-goods-action-big-btn primary text="立即购买" @click="onBuy"/>
+                  <van-goods-action-button
+                    type="warning"
+                    text="加入购物车"
+                    @click="onCart"
+                  />
+                  <van-goods-action-button
+                    type="danger"
+                    text="立即购买"
+                    primary
+                    @click="onBuy"
+                  />
                 </van-goods-action>  
               </div>
             </van-popup>
@@ -91,11 +100,35 @@
         </div>
         <!-- 底部悬浮栏 -->
         <van-goods-action>
-          <van-goods-action-mini-btn icon="star" text="收藏" @click="addLike" v-if="isLike"/>
-          <van-goods-action-mini-btn icon="star-o" text="收藏" @click="addLike" v-else/>
-          <van-goods-action-mini-btn icon="cart-o" text="购物车" @click="tzCart"/>
-          <van-goods-action-big-btn text="加入购物车" @click="onCart"/>
-          <van-goods-action-big-btn primary text="立即购买" @click="onBuy"/>
+          <van-goods-action-icon
+            icon="star"
+            text="收藏"
+            @click="addLike" 
+            v-if="isLike"
+          />
+          <van-goods-action-icon
+            icon="star-o"
+            text="收藏"
+            @click="addLike"
+            v-else
+          />
+          <van-goods-action-icon
+            info="5"
+            icon="cart-o"
+            text="购物车"
+            @click="tzCart"
+          />
+          <van-goods-action-button
+            type="warning"
+            text="加入购物车"
+            @click="onCart"
+          />
+          <van-goods-action-button
+            type="danger"
+            text="立即购买"
+            primary
+            @click="onBuy"
+          />
         </van-goods-action>
         <!-- backTop 回顶部的组件 -->
         <ToTop/>

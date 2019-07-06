@@ -27,9 +27,10 @@
                 v-model="formText.address"
                 name="address"
                 icon="arrow"
-                placeholder="选择地区"
+                placeholder="所在地区"
                 @click.native="onAddress"
                 disabled
+                is-link
               />
               <van-popup
                 v-model="showSet"
@@ -43,13 +44,16 @@
                 name="city"
                 clearable
                 icon="arrow"
-                placeholder="详细地址"
-              />             
-              <van-switch-cell
-                v-model="formText.checked"
-                name="switch"
-                title="设为默认"
-              />
+                type="textarea"
+                placeholder="详细地址:如道路、门牌号、小区、楼栋号、单元室等"
+              />        
+              <div style="margin-top: 10px;">
+                <van-switch-cell
+                  v-model="formText.checked"
+                  name="switch"
+                  title="设为默认地址"
+                />
+              </div>     
             </van-cell-group>   
           </div>
           <div>
@@ -166,6 +170,12 @@ export default {
 }
 </script>
 <style scoped>
+.page{
+  background: #f2f2f2;
+}
+.van-cell-group{
+  background-color: #f2f2f2;
+}
 .address-add-btn{
   position: fixed;
   bottom: 0;

@@ -219,7 +219,7 @@ export default {
 }
 </script>
 <style scoped>
-body{
+.page{
   background: #f2f2f2;
 }
 .order-cell{
