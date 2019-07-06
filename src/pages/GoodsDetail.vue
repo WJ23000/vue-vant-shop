@@ -15,7 +15,7 @@
             <div class="title" name="title">高空航拍无人机至尊荣耀版</div>
             <div class="price" name="price">￥3501.00</div>
           </div>
-          <div style='margin-top:10px;'>
+          <div style='margin: 10px 0px;'>
             <van-field
               v-model="specifValue"
               name="address"
@@ -63,12 +63,24 @@
                 </van-goods-action>  
               </div>
             </van-popup>
-            <!-- 商品评价 -->
-            <div class="separate"></div>
-            <van-cell title="商品评价(0)" value="查看更多" to="/Comment" is-link size="large" :border="false"></van-cell>
-            <div class="text-remark">东西还可以，好评~</div>
-            <div class="separate"></div>
           </div>
+          <!-- 商品评价 -->
+          <van-cell title="商品评价(1)" value="查看全部" to="/Comment" is-link size="large" :border="false"></van-cell>
+          <div v-if="commentList.length > 0">
+            <div v-for="(item,index) in commentList" :key="index">
+              <div class='comment-cell'>
+                <div class='user-nickname'>
+                  <img class='user-icon' v-lazy="item.userImg"/>
+                  <span class='nickname'>{{item.userName}}</span>
+                </div>
+                <span class='commentDetail'>{{item.content}}</span>
+              </div>
+            </div>
+          </div>
+          <div v-else>
+            <div class="text-remark">东西还可以，好评~</div>
+          </div> 
+          
           <!-- 商品详情 -->
           <div style='margin-top:10px;margin-bottom:50px;'>
             <van-cell title="商品详情" size="large"></van-cell>
@@ -114,6 +126,23 @@ export default {
       detailImg: [
         {img:require('../assets/sp-detail1.png')},
         {img:require('../assets/sp-detail2.png')}
+      ],
+      // 评价列表
+      commentList: [
+        {
+          id: 1,
+          userImg: require('../assets/user.png'),
+          userName: "大黑",
+          content: "商家很靠谱，物美价廉、商品质量真的很不错，下次还会再来的",
+          goodsImg: [
+            require('../assets/shop1.png'),
+            require('../assets/shop1.png'),
+            require('../assets/shop1.png')
+          ],
+          createTime: "2019-02-25 15:23:30",
+          likeNum: 554,
+          isLike: true
+        }
       ],
       // 规格
       specifImg: require('../assets/shop1.png'),
@@ -523,5 +552,41 @@ button {
 } 
 button{
   border: 0;
+}
+
+
+
+/* 商品评价 */
+.comment-cell{
+  float: left;
+  width: 100%;
+  background: #ffffff;
+  padding: 10px 15px 10px 15px;
+  border-bottom: 1px solid #f2f2f2; 
+  box-sizing: border-box
+}
+.user-nickname{
+  float: left;
+  width: 100%;
+}
+.user-icon{
+  float: left;
+  width: 32px; 
+  height: 32px; 
+  border-radius: 25px;
+  vertical-align: top;
+}
+.nickname{
+  float: left;
+  width: 100px;
+  font-size: 16px;
+  color: #999999;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+.commentDetail{
+  float: left;
+  font-size: 13px;
+  margin-left: 42px;
 }
 </style>

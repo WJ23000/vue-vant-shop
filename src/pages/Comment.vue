@@ -13,6 +13,11 @@
                         <!-- <text class='comment-time'>{{item.createTime}}</text> -->
                     </div>
                     <span class='commentDetail'>{{item.content}}</span>
+                    <div class='comment-img'>
+                        <div v-for="(items, zindex) in item.goodsImg" :key="zindex">
+                            <img v-lazy='items'  @click="commentImgPreview(zindex,item.goodsImg)"/>
+                        </div>
+                    </div>
                     <div class='time-heart' @click="likeZan" :data-index="index">
                         <span class='dianzan'>{{item.likeNum}}</span>
                         <img class='heart-icon' :src='okZan' v-if="item.isLike == 1"/>
@@ -43,6 +48,7 @@
 </template>
 
 <script>
+import { ImagePreview } from 'vant';
 import HeaderTwo from '@/components/HeaderTwo';
 export default {
   name: 'Comment',
@@ -58,6 +64,11 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "大黑",
                 content: "商家很靠谱，物美价廉、商品质量真的很不错，下次还会再来的",
+                goodsImg:[
+                    require('../assets/shop1.png'),
+                    require('../assets/shop1.png'),
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-25 15:23:30",
                 likeNum: 554,
                 isLike: 1
@@ -67,6 +78,10 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "二黑",
                 content: "商品质量真的很不错2",
+                goodsImg:[
+                    require('../assets/shop1.png'),
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-26 17:23:30",
                 likeNum: 699,
                 isLike: 0
@@ -76,6 +91,10 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "三黑",
                 content: "商品质量真的很不错3",
+                goodsImg:[
+                    require('../assets/shop1.png'),
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-27 19:23:30",
                 likeNum: 255,
                 isLike: 1
@@ -85,6 +104,9 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "四黑",
                 content: "商品质量真的很不错4",
+                goodsImg:[
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-25 15:23:30",
                 likeNum: 388,
                 isLike: 1
@@ -94,6 +116,9 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "五黑",
                 content: "商品质量真的很不错5",
+                goodsImg:[
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-26 17:23:30",
                 likeNum: 552,
                 isLike: 0
@@ -103,6 +128,11 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "六黑",
                 content: "商品质量真的很不错6",
+                goodsImg:[
+                    require('../assets/shop1.png'),
+                    require('../assets/shop1.png'),
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-27 19:23:30",
                 likeNum: 6666,
                 isLike: 1
@@ -112,6 +142,10 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "五黑",
                 content: "商品质量真的很不错7",
+                goodsImg:[
+                    require('../assets/shop1.png'),
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-26 17:23:30",
                 likeNum: 788,
                 isLike: 0
@@ -121,6 +155,9 @@ export default {
                 userImg: require('../assets/user.png'),
                 userName: "六黑",
                 content: "商品质量真的很不错8",
+                goodsImg:[
+                    require('../assets/shop1.png')
+                ],
                 createTime: "2019-02-27 19:23:30",
                 likeNum: 866,
                 isLike: 1
@@ -166,6 +203,10 @@ export default {
             this.$toast("已点赞")
         }
         this.commentList=commentList
+    },
+    // 评论商品图图片预览
+    commentImgPreview: function (index,img) { 
+      ImagePreview(img);
     }
   }
   
@@ -206,8 +247,22 @@ export default {
 }
 .commentDetail{
     float: left;
+    width: 87.5%;
     font-size: 13px;
     margin-left: 42px
+}
+.comment-img{
+  float: left;
+  width: 100%;
+  margin-left: 42px;
+}
+.comment-img img{
+  float: left;
+  width: 90px;
+  height: 90px;
+  border: 1px solid #f2f2f2;
+  margin: 6px 4px 6px 0px;
+  border-radius: 4px;
 }
 .time-heart{ 
     float: left;
