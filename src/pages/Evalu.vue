@@ -106,7 +106,7 @@ export default {
         ]
       },
       uploaderList: [],
-      fileList: []
+      fileList: []  // 服务端图片回显
     }
   },
   created () {
@@ -147,18 +147,12 @@ export default {
     onTude: function (value) {
       this.tudeScore= value
     },
-    // 图片选择后
+    // 图片选择后上传服务端新增
     afterRead(file) {
-      let that = this;
       // 此时可以自行将文件上传至服务器
-      // console.log(file);
-      let tempFilePaths = file.content;
-      let uploaderList = that.uploaderList.concat(tempFilePaths);
-      that.uploaderList = uploaderList
-      // 已上传的图片列表
-      console.log("已上传的上传图片列表" + JSON.stringify(that.uploaderList))
+      console.log(file);
     },
-    // 图片选择前
+    // 点击图片后上传服务端移除
     delImg(file) {
       // 此时可以自行将文件上传至服务器
       console.log(file);
