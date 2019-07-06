@@ -187,7 +187,6 @@ export default {
   float: right;
   width: 80px;
   height: 32px;
-  line-height: 32px;
   text-align: center;
   background: #ffffff;
   color: #3982f6;

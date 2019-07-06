@@ -252,8 +252,6 @@ export default {
     margin-left: 42px
 }
 .comment-img{
-  float: left;
-  width: 100%;
   margin-left: 42px;
 }
 .comment-img img{

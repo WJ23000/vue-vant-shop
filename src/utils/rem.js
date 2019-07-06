@@ -1,5 +1,5 @@
-// 基准大小
-const baseSize =75.015
+// 基准大小(设计师UI图标准750px * 1600px)
+const baseSize = 75
 // 设置 rem 函数
 function setRem () {
   // 当前页面宽度相对于 750 宽的缩放比例，可根据自己需要修改。

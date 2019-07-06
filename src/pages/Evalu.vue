@@ -37,7 +37,7 @@
                   :border="false"
                 />
                 <div class="evalu-upload">
-                  <van-uploader :after-read="afterRead" v-model="fileList" multiple/>
+                  <van-uploader :after-read="afterRead" @delete="delImg" v-model="fileList" accept="image/*" multiple/>
                 </div>
                 <van-switch-cell
                   v-model="formText.checked"
@@ -105,6 +105,7 @@ export default {
           {required: true, message: '请输入留言'}
         ]
       },
+      uploaderList: [],
       fileList: []
     }
   },
@@ -146,8 +147,19 @@ export default {
     onTude: function (value) {
       this.tudeScore= value
     },
-    // 图片上传
+    // 图片选择后
     afterRead(file) {
+      let that = this;
+      // 此时可以自行将文件上传至服务器
+      // console.log(file);
+      let tempFilePaths = file.content;
+      let uploaderList = that.uploaderList.concat(tempFilePaths);
+      that.uploaderList = uploaderList
+      // 已上传的图片列表
+      console.log("已上传的上传图片列表" + JSON.stringify(that.uploaderList))
+    },
+    // 图片选择前
+    delImg(file) {
       // 此时可以自行将文件上传至服务器
       console.log(file);
     }
