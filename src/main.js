@@ -16,7 +16,7 @@ Vue.prototype.$http = axios
 
 // 使用vuex机制
 import store from './store/store.js'
-// 注册vue-scroller中间件
+// 注册vuex中间件
 Vue.prototype.$store = store
 
 // 使用vue-scroller上拉刷新下拉加载
