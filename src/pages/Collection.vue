@@ -52,7 +52,6 @@ export default {
   components:{
     HeaderTwo
   },
-  inject: ['reload'], //注入reload方法
   data () {
     return {
       title:"我的收藏",   
@@ -164,7 +163,7 @@ export default {
       this.showVal= true
     },
 
-    //全选
+    // 全选
     selectAll: function (e) {
       let CheckAll = this.CheckAll;
       CheckAll = !CheckAll
@@ -175,32 +174,32 @@ export default {
       this.collectionList= collectionList,
       this.delList= collectionList,
       this.CheckAll= CheckAll
-      //计算删除数量
+      // 计算删除数量
       this.delCollectionCount();
     },
 
-    //单选
+    // 单选
     selectSingle: function (e) {
-      let collectionList = this.collectionList   //获取购物车列表
-      let index = e.currentTarget.dataset.index;  //获取当前点击事件的下标索引
-      let selected = collectionList[index].selected;    //获取当前点击事件的下标索引是否选中
-      //取反
+      let collectionList = this.collectionList //获取购物车列表
+      let index = e.currentTarget.dataset.index; //获取当前点击事件的下标索引
+      let selected = collectionList[index].selected; //获取当前点击事件的下标索引是否选中
+      // 取反
       collectionList[index].selected = !selected;
       this.collectionList= collectionList,
       this.delList= collectionList,
-      //计算删除数量
+      // 计算删除数量
       this.delCollectionCount();
     },
 
-    //删除
+    // 删除
     del: function (e) {
       let delState = true;
-      let collectionList = this.collectionList  //获取购物车列表
+      let collectionList = this.collectionList //获取购物车列表
       console.log(collectionList.length)
       for (let i = 0; i < collectionList.length; i++) {
         if (collectionList[i].selected == delState){
           collectionList.splice(i, 1)
-          //更新删除数量数据
+          // 更新删除数量数据
           this.delCount= i
           i=i-1;
         }
@@ -208,7 +207,7 @@ export default {
       this.collectionList= collectionList
     },
 
-    //删除数量方法
+    // 删除数量方法
     delCollectionCount: function () {
       let count = 0;
       let i = 0;
@@ -217,14 +216,19 @@ export default {
           count = count + 1;
         }
       }
-      //更新删除数量数据
+      // 更新删除数量数据
       this.delCount= count
     },
 
-    //上拉刷新下拉加载方法
+    // 下拉刷新
     refresh(done) {
-      this.reload();
+      let that = this;
+      that.$toast("已触发下拉刷新")
+      setTimeout(() => {
+        that.$refs.my_scroller.finishPullToRefresh(); //停止下拉刷新动效
+      },3000)  
     },
+    // 上拉加载
     infinite(done) {
       if (this.bottom >= 3) {
         setTimeout(() => {
