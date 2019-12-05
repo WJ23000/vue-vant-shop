@@ -37,8 +37,8 @@ Vue.config.devtools = true
 Vue.use(Vant)
 Vue.use(VueLazyload, {
   preLoad: 1.3,
-  error: require('../dist/error-img.png'),
-  loading: require('../dist/loading.png'),
+  // error: require('../dist/error-img.png'),
+  // loading: require('../dist/loading.png'),
   attempt: 1
 });
 
