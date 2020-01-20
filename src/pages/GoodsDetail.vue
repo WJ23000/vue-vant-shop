@@ -401,7 +401,7 @@ export default {
   
 }
 </script>
-<style scoped>
+<style lang="stylus" scoped>
 .van-swipe-item img{
   float: left;
   width: 100%;
