@@ -35,6 +35,7 @@ import Grid from "@/components/Grid";
 import Notice from "@/components/Notice";
 import GoodsList from "@/components/GoodsList";
 import ToTop from "@/components/ToTop";
+import { goodsList } from "@/json/goods";
 export default {
   name: "Index",
   components: {
@@ -48,7 +49,8 @@ export default {
       navActive: 0,
       images: [
         { url: require("../assets/s-banner1.jpg") },
-        { url: require("../assets/s-banner2.jpg") }
+        { url: require("../assets/s-banner2.jpg") },
+        { url: require("../assets/s-banner3.jpg") }
       ],
       gridList: [
         {
@@ -73,62 +75,7 @@ export default {
         }
       ],
       notice: "云逸商贸1周年，冬季大酬宾，各类电子商品、家居用品大优惠",
-      goodsList: [
-        {
-          id: 1,
-          title:
-            "智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版",
-          price: 3001.0,
-          sell: 101,
-          url: "",
-          icon: require("../assets/shop1.png")
-        },
-        {
-          id: 2,
-          title:
-            "智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版",
-          price: 3002.0,
-          sell: 102,
-          url: "",
-          icon: require("../assets/shop1.png")
-        },
-        {
-          id: 3,
-          title:
-            "智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版",
-          price: 3003.0,
-          sell: 103,
-          url: "",
-          icon: require("../assets/shop1.png")
-        },
-        {
-          id: 4,
-          title:
-            "智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版",
-          price: 3004.0,
-          sell: 104,
-          url: "",
-          icon: require("../assets/shop1.png")
-        },
-        {
-          id: 5,
-          title:
-            "智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版",
-          price: 3005.0,
-          sell: 105,
-          url: "",
-          icon: require("../assets/shop1.png")
-        },
-        {
-          id: 6,
-          title:
-            "智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版",
-          price: 3006.0,
-          sell: 106,
-          url: "",
-          icon: require("../assets/shop1.png")
-        }
-      ]
+      goodsList: goodsList
     };
   },
   created() {},
@@ -150,5 +97,6 @@ export default {
 .van-swipe-item img {
   float: left;
   width: 100%;
+  height: 100%;
 }
 </style>
