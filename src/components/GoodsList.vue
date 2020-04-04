@@ -1,7 +1,7 @@
 <template>
   <div class="goods-list">
     <div :class="viewWayData ? curActive1 : curActive2" v-for="(item,index) in goodsListData" :key="index">
-      <router-link :to="{path:'/GoodsDetail',query: {goodsId: item.id}}">
+      <router-link :to="{path:'/goodsDetail',query: {goodsId: item.id}}">
         <div class="goods-icon">
           <img v-lazy="item.icon">
         </div>

@@ -1,0 +1,177 @@
+.goodsDetail
+  .van-swipe-item img
+    float left
+    width 100%
+  .detail
+    display flex
+    flex-direction column
+    margin-bottom 0px
+  .title
+    background #ffffff
+    color black
+    font-size 16px
+    padding 10px 15px
+    text-align justify
+  .price
+    background #ffffff
+    color #3982f6
+    font-size 16px
+    padding 10px 15px
+  .line_flag
+    width 40px
+    height 1px
+    display inline-block
+    margin 10px auto
+    background-color gainsboro
+    text-align center
+  .line
+    width 100%
+    height 1px
+    display inline-block
+    margin 10px 0px
+    background-color gainsboro
+    text-align center
+  .detail-nav
+    display flex
+    flex-direction row
+    align-items center
+    float left
+    background-color #fff
+    position fixed
+    bottom 0
+    right 0
+    z-index 1
+    width 100%
+    height 50px
+  .button-green
+    background-color #4caf50 
+  .button-red
+    background-color #f44336 
+  .image_detail
+    width 100%
+  button
+    color white
+    text-align center
+    text-decoration none
+    display inline-block
+    font-size 15px
+    border-radius 0px
+    width 50%
+    height 100%
+    line-height 50px
+  .detail-nav image
+    width 35px
+    height 25px
+    margin 10px 20px
+  .line_nav
+    width 2.5px
+    height 100%
+    background-color gainsboro
+  .temp
+    height 50px
+  .text-remark
+    background #ffffff
+    color #aaaaaa
+    display block
+    font-size 12px
+    padding 10px 15px
+  .specif-count
+    float left
+    width 100%
+    height 100%
+    background-color #ffffff
+    padding 10px 0px
+    box-sizing border-box
+  .specif-count .specif-header
+    padding 10px 15px
+    box-sizing border-box
+  .specif-count .specif-img
+    float left
+    width 35%
+    height 120px
+    margin-right 0.2rem
+  .specif-count .specif-img .img
+    width 100%
+    height 120px
+  .specif-count .specif-detail
+    float left
+    width 55%
+  .specif-count .specif-close-icon
+    float left
+    width 5%
+    margin-top -15px
+  .specif-count .specif-price
+    color #3982f6
+    font-size 18px
+    margin-top 20px
+  .specif-count .specif-inventory
+    font-size 14px
+    color #aaaaaa
+    margin-top 5px
+  .specif-count .specif-title
+    font-size 14px
+    margin-top 10px
+  .specif-count .specif-cation
+    float left
+    width 100%
+  .search-history-title
+    float left
+    width 100%
+    font-size 16px
+    padding 10px 15px
+    box-sizing border-box
+  .search-cell li
+    float left
+    margin 5px 0px 5px 15px
+    text-align center
+    padding 5px 15px
+    font-size 14px
+    border 1px solid #606060
+    border-radius 0.08rem
+    color #606060
+  /*规格item被选中时*/
+  .search-cell li.productActive
+    background-color #ff976a
+    color #fff
+    border 1px solid #ff976a
+  .search-cell li.noneActive
+    background-color #ccc
+    opacity 0.4
+    color #000
+    pointer-events none
+  .van-button--danger
+    background-color #3982f6 !important
+    border 2rpx solid #3982f6 !important
+  .van-info
+    background-color #3982f6 !important
+  button
+    border 0
+  /* 商品评价 */
+  .comment-cell
+    float left
+    width 100%
+    background #ffffff
+    padding 10px 15px 10px 15px
+    border-bottom 1px solid #f2f2f2
+    box-sizing border-box
+  .user-nickname
+    float left
+    width 100%
+  .user-icon
+    float left
+    width 32px
+    height 32px
+    border-radius 25px
+    vertical-align top
+  .nickname
+    float left
+    width 100px
+    font-size 16px
+    color #999999
+    margin-left 10px
+    margin-top 5px
+  .commentDetail
+    float left
+    font-size 13px
+    margin-left 42px
+

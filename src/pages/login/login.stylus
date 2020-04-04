@@ -1,0 +1,21 @@
+.login
+  .page-content
+    background #ffffff
+  .btn-cell
+    padding 10px 15px
+  .login-btn
+    margin-top 80px
+  .login-option-title
+    text-align center
+    margin-top 120px
+    color #999999
+    font-size 16px
+  .login-option-content
+    margin-top 60px
+  .login-author
+    float left
+    width 50%
+    text-align center
+  .login-author img
+    width 20%
+

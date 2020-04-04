@@ -1,0 +1,32 @@
+.searchOrderList
+  .sort-wrap
+    position fixed
+    width 100%
+    z-index 1
+    height 44px
+    background-color #fff
+    border-bottom 1px solid #f2f2f2
+    margin-top 2px
+  .sort-btn
+    width 25%
+    float left
+    text-align center
+    height 44px
+    line-height 44px
+    font-size 14px
+    color #333
+  .sort-btn img
+    margin-top 2px
+    width 20px
+    height 36px
+    margin-left 3px
+    vertical-align top
+  .sort-btn .view-Img
+    margin-top 8px
+    width 25px
+    height 25px
+    margin-left 3px
+    vertical-align top
+  .sort-btn .textColor
+    color #3982f6
+

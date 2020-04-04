@@ -8,117 +8,117 @@ Vue.use(Router)
 export const constantRoutes = [
   {
     path: '/',
-    name: 'Index',
+    name: 'index',
     meta: { index: 0 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Index'],resolve)
+    component: resolve => require(['@/pages/index/index.vue'],resolve)
   },
   {
-    path: '/Login',
-    name: 'Login',
+    path: '/login',
+    name: 'login',
     meta: { index: 0 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Login'], resolve)
+    component: resolve => require(['@/pages/login/login.vue'], resolve)
   },
   {
-    path: '/Class',
-    name: 'Class',
+    path: '/category',
+    name: 'category',
     meta: { index: 0 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Class'], resolve)
+    component: resolve => require(['@/pages/category/category.vue'], resolve)
   },
   {
-    path: '/Cart',
-    name: 'Cart',
+    path: '/cart',
+    name: 'cart',
     meta: { index: 0 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Cart'], resolve)
+    component: resolve => require(['@/pages/cart/cart.vue'], resolve)
   },
   {
-    path: '/Mine',
-    name: 'Mine',
+    path: '/mine',
+    name: 'mine',
     meta: { index: 0 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Mine'], resolve)
+    component: resolve => require(['@/pages/mine/mine.vue'], resolve)
   },
   {
-    path: '/OrderList',
-    name: 'OrderList',
+    path: '/orderList',
+    name: 'orderList',
     meta: { index: 1 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/OrderList'], resolve)
+    component: resolve => require(['@/pages/orderList/orderList.vue'], resolve)
   },
   {
-    path: '/OrderDetail',
-    name: 'OrderDetail',
+    path: '/orderDetail',
+    name: 'orderDetail',
     meta: { index: 2 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/OrderDetail'], resolve)
+    component: resolve => require(['@/pages/orderDetail/orderDetail.vue'], resolve)
   },
   {
-    path: '/EvaluList',
-    name: 'EvaluList',
+    path: '/evaluList',
+    name: 'evaluList',
     meta: { index: 1 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/EvaluList'], resolve)
+    component: resolve => require(['@/pages/evaluList/evaluList.vue'], resolve)
   },
   {
-    path: '/Evalu',
-    name: 'Evalu',
+    path: '/evalu',
+    name: 'evalu',
     meta: { index: 2 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Evalu'], resolve)
+    component: resolve => require(['@/pages/evalu/evalu.vue'], resolve)
   },
   {
-    path: '/Address',
-    name: 'Address',
+    path: '/address',
+    name: 'address',
     meta: { index: 1 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Address'], resolve)
+    component: resolve => require(['@/pages/address/address.vue'], resolve)
   },
   {
-    path: '/AddressAdd',
-    name: 'AddressAdd',
+    path: '/addressAdd',
+    name: 'addressAdd',
     meta: { index: 2 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/AddressAdd'], resolve)
+    component: resolve => require(['@/pages/addressAdd/addressAdd.vue'], resolve)
   },
   {
-    path: '/Collection',
-    name: 'Collection',
+    path: '/collection',
+    name: 'collection',
     meta: { index: 1 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Collection'], resolve)
+    component: resolve => require(['@/pages/collection/collection.vue'], resolve)
   },
   {
-    path: '/Set',
-    name: 'Set',
+    path: '/set',
+    name: 'set',
     meta: { index: 1 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Set'], resolve)
+    component: resolve => require(['@/pages/set/set.vue'], resolve)
   },
   {
-    path: '/BindPhone',
-    name: 'BindPhone',
+    path: '/bindPhone',
+    name: 'bindPhone',
     meta: { index: 3 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/BindPhone'], resolve)
+    component: resolve => require(['@/pages/bindPhone/bindPhone.vue'], resolve)
   },
   {
-    path: '/Search',
-    name: 'Search',
+    path: '/search',
+    name: 'search',
     meta: { index: 1 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Search'], resolve)
+    component: resolve => require(['@/pages/search/search.vue'], resolve)
   },
   {
-    path: '/SearchOrderList',
-    name: 'SearchOrderList',
+    path: '/searchOrderList',
+    name: 'searchOrderList',
     meta: { index: 1 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/SearchOrderList'], resolve)
+    component: resolve => require(['@/pages/searchOrderList/searchOrderList.vue'], resolve)
   },
   {
-    path: '/GoodsDetail',
-    name: 'GoodsDetail',
+    path: '/goodsDetail',
+    name: 'goodsDetail',
     meta: { index: 2 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/GoodsDetail'], resolve)
+    component: resolve => require(['@/pages/goodsDetail/goodsDetail.vue'], resolve)
   },
   {
-    path: '/PayOrder',
-    name: 'PayOrder',
+    path: '/payOrder',
+    name: 'payOrder',
     meta: { index: 2 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/PayOrder'], resolve)
+    component: resolve => require(['@/pages/payOrder/payOrder.vue'], resolve)
   },
   {
-    path: '/Comment',
-    name: 'Comment',
+    path: '/comment',
+    name: 'comment',
     meta: { index: 3 },//meta对象的index用来定义当前路由的层级,由小到大,由低到高
-    component: resolve => require(['@/pages/Comment'], resolve)
+    component: resolve => require(['@/pages/comment/comment.vue'], resolve)
   }
 ]
 

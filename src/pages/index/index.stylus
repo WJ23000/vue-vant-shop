@@ -1,0 +1,4 @@
+.index
+  .van-swipe-item img
+    float left
+    width 100%

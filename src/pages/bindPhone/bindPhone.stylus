@@ -1,0 +1,20 @@
+.bindPhone
+  .address-add-btn
+    position fixed
+    bottom 0
+    z-index 1
+    width 100%
+    height 44px
+    line-height normal
+    padding 10px 0
+    background linear-gradient(
+      63deg,
+      rgba(50, 125, 218, 1),
+      rgba(50, 66, 218, 1)
+    )
+    color #ffffff
+    font-size 16px
+    text-align center
+    border 0
+    border-radius 0
+
