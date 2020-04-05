@@ -5,7 +5,6 @@
     width 100%
     height 100%
     overflow-y hidden
-  /*左侧栏主盒子*/
   .content-left
     position absolute
     left 0
@@ -16,35 +15,25 @@
   .content-left-webkit-scrollbar
     display none
   .nav_left
-    /*右侧盒子使用了绝对定位*/
     float left
     width 100%
     margin-bottom 93px
     flex 1
-    /*宽度75%，高度占满，并使用百分比布局*/
     text-align center
-    /* padding 0px 10px 10px 0px   */
     box-sizing border-box
     background #f2f2f2
-  /*左侧栏list的item*/
-  .nav_left .nav_left_items
-    /*每个高30px*/
-    height 40px
-    /*垂直居中*/
-    line-height 40px
-    /*再设上下padding增加高度，总高42px*/
-    padding 6px 0
-    /*只设下边线*/
-    border-bottom 1px solid #dedede
-    /*文字14px*/
-    font-size 14px
-  /*左侧栏list的item被选中时*/
-  .nav_left .nav_left_items.active
-    /*背景色变成白色*/
-    background #ffffff
-    color #3982f6
-    border-left 4px solid #3982f6
-  /*右侧栏主盒子*/
+  .nav_left 
+    .nav_left_items
+      height 40px
+      line-height 40px
+      padding 6px 0
+      border-bottom 1px solid #dedede
+      font-size 14px
+  .nav_left 
+    .nav_left_items.active
+      background #ffffff
+      color #3982f6
+      border-left 4px solid #3982f6
   .content-right
     position absolute
     right 0
@@ -54,53 +43,52 @@
     background #ffffff
     overflow-y auto
   .nav_right
-    /*右侧盒子使用了绝对定位*/
     float left
     width 100%
     margin-bottom 93px
     flex 1
-    /*宽度75%，高度占满，并使用百分比布局*/
     padding 10px
     box-sizing border-box
     background #fff
-  .nav_right a
-    color #333333
-  /*右侧栏list的item*/
-  .nav_right .nav_right_items
-    /*浮动向左*/
-    float left
-    /*每个item设置宽度是33.33%*/
-    width 33.33%
-    height 120px
-    text-align center
-  .nav_right .nav_right_items span
-    /*浮动向左*/
-    float left
-    /*每个item设置宽度是33.33%*/
-    width 100%
-    font-size 10px
-    text-align center
-  .nav_right .nav_right_items img
-    /*被图片设置宽高*/
-    width 60px
-    height 60px
-    margin-top 15px
-  .nav_right .nav_right_items text
-    /*给text设成块级元素*/
-    display block
-    margin-top 15px
-    font-size 14px
-    color black
-    /*设置文字溢出部分为...*/
-    overflow hidden
-    white-space nowrap
-    text-overflow ellipsis
+  .nav_right 
+    a
+      color #333333
+  .nav_right 
+    .nav_right_items
+      float left
+      width 33.33%
+      height 120px
+      text-align center
+  .nav_right 
+    .nav_right_items 
+      span
+        float left
+        width 100%
+        font-size 10px
+        text-align center
+  .nav_right 
+    .nav_right_items 
+      img
+        width 60px
+        height 60px
+        margin-top 15px
+  .nav_right 
+    .nav_right_items 
+      text
+        display block
+        margin-top 15px
+        font-size 14px
+        color black
+        overflow hidden
+        white-space nowrap
+        text-overflow ellipsis
   .nodata_text
     color black
     font-size 14px
     text-align center
-  .nodata_text img
-    margin-top 50px
-    width 50%
-    height 120px
+  .nodata_text 
+    img
+      margin-top 50px
+      width 50%
+      height 120px
 

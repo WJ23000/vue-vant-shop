@@ -1,7 +1,11 @@
 .goodsDetail
-  .van-swipe-item img
-    float left
-    width 100%
+  .van-swipe
+    height 156px
+  .van-swipe-item 
+    img
+      float left
+      width 100%
+      height 100%
   .detail
     display flex
     flex-direction column
@@ -59,10 +63,11 @@
     width 50%
     height 100%
     line-height 50px
-  .detail-nav image
-    width 35px
-    height 25px
-    margin 10px 20px
+  .detail-nav 
+    image
+      width 35px
+      height 25px
+      margin 10px 20px
   .line_nav
     width 2.5px
     height 100%
@@ -82,71 +87,73 @@
     background-color #ffffff
     padding 10px 0px
     box-sizing border-box
-  .specif-count .specif-header
-    padding 10px 15px
-    box-sizing border-box
-  .specif-count .specif-img
-    float left
-    width 35%
-    height 120px
-    margin-right 0.2rem
-  .specif-count .specif-img .img
-    width 100%
-    height 120px
-  .specif-count .specif-detail
-    float left
-    width 55%
-  .specif-count .specif-close-icon
-    float left
-    width 5%
-    margin-top -15px
-  .specif-count .specif-price
-    color #3982f6
-    font-size 18px
-    margin-top 20px
-  .specif-count .specif-inventory
-    font-size 14px
-    color #aaaaaa
-    margin-top 5px
-  .specif-count .specif-title
-    font-size 14px
-    margin-top 10px
-  .specif-count .specif-cation
-    float left
-    width 100%
+  .specif-count 
+    .specif-header
+      padding 10px 15px
+      box-sizing border-box
+    .specif-img
+      float left
+      width 35%
+      height 120px
+      margin-right 0.2rem
+      .img
+        width 100%
+        height 120px
+    .specif-detail
+      float left
+      width 55%
+    .specif-close-icon
+      float left
+      width 5%
+      margin-top -15px
+    .specif-price
+      color #3982f6
+      font-size 18px
+      margin-top 20px
+    .specif-inventory
+      font-size 14px
+      color #aaaaaa
+      margin-top 5px
+    .specif-title
+      font-size 14px
+      margin-top 10px
+    .specif-cation
+      float left
+      width 100%
   .search-history-title
     float left
     width 100%
     font-size 16px
     padding 10px 15px
     box-sizing border-box
-  .search-cell li
-    float left
-    margin 5px 0px 5px 15px
-    text-align center
-    padding 5px 15px
-    font-size 14px
-    border 1px solid #606060
-    border-radius 0.08rem
-    color #606060
-  /*规格item被选中时*/
-  .search-cell li.productActive
-    background-color #ff976a
-    color #fff
-    border 1px solid #ff976a
-  .search-cell li.noneActive
-    background-color #ccc
-    opacity 0.4
-    color #000
-    pointer-events none
+  .search-cell 
+    li
+      float left
+      margin 5px 0px 5px 15px
+      text-align center
+      padding 5px 15px
+      font-size 14px
+      border 1px solid #606060
+      border-radius 0.08rem
+      color #606060
+  .search-cell 
+    li.productActive
+      background-color #ff976a
+      color #fff
+      border 1px solid #ff976a
+  .search-cell 
+    li.noneActive
+      background-color #ccc
+      opacity 0.4
+      color #000
+      pointer-events none
   .van-button--danger
     background-color #3982f6 !important
-    border 2rpx solid #3982f6 !important
+    border 1px solid #3982f6 !important
   .van-info
     background-color #3982f6 !important
   button
     border 0
-  /* 商品评价 */
   .comment-cell
     float left
     width 100%

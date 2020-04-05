@@ -1,4 +1,10 @@
 .index
-  .van-swipe-item img
-    float left
-    width 100%
+  .page-content
+    margin-top 54px
+  .van-swipe
+    height 156px
+  .van-swipe-item 
+    img
+      float left
+      width 100%
+      height 100%

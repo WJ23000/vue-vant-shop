@@ -20,7 +20,7 @@
           <img :src="viewImg" class='view-Img'/>
         </div>
       </div>
-      <div style="float:left;">
+      <div class="goods-content">
         <GoodsList :goodsListVal="goodsList" :viewWayVal="viewWay"></GoodsList>
       </div>
     </div>

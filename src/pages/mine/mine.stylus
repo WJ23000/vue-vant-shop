@@ -10,27 +10,22 @@
       rgba(50, 125, 218, 1),
       rgba(50, 66, 218, 1)
     )
-
   .mine-header
     float left
     width 100%
     padding 10px 15px
     box-sizing border-box
-
   .mine-left
     float left
     width 18%
-
   .mine-right
     float left
     width 82%
-
   .mine-img
     float left
     width 50px
     height 50px
     border-radius 60px
-
   .mine-welcome
     float left
     width 100%
@@ -38,28 +33,23 @@
     font-size 18px
     text-align left
     font-weight 500
-
   .mine-username
     float left
     width 100%
     color #ffffff
     font-size 14px
     text-align left
-
   .mine-order-grids
     float left
     width 100%
     padding 10px 15px
     box-sizing border-box
     margin-top -60px
-
-  /* 九宫格 */
   .weui-grids
     position relative
     overflow hidden
     background #ffffff
     border-radius 6px
-
   .weui-gridsbefore
     content " "
     position absolute
@@ -67,13 +57,11 @@
     top 0
     right 0
     height 1px
-    /* border-top 1px solid #D9D9D9   */
     color #d9d9d9
     -webkit-transform-origin 0 0
     transform-origin 0 0
     -webkit-transform scaleY(0.5)
     transform scaleY(0.5)
-
   .weui-gridsafter
     content " "
     position absolute
@@ -81,65 +69,55 @@
     top 0
     width 1px
     bottom 0
-    /* border-left 1px solid #D9D9D9   */
     color #d9d9d9
     -webkit-transform-origin 0 0
     transform-origin 0 0
     -webkit-transform scaleX(0.5)
     transform scaleX(0.5)
-
   .weui-grid
     position relative
     float left
     padding 20px 10px
     width 25%
     box-sizing border-box
-
-  .weui-gridbefore
+  .weui-grid:before
     content " "
     position absolute
     right 0
     top 0
     width 1px
     bottom 0
-    /* border-right 1px solid #D9D9D9   */
     color #d9d9d9
     -webkit-transform-origin 100% 0
     transform-origin 100% 0
     -webkit-transform scaleX(0.5)
     transform scaleX(0.5)
-
-  .weui-gridafter
+  .weui-grid:after
     content " "
     position absolute
     left 0
     bottom 0
     right 0
     height 1px
-    /* border-bottom 1px solid #D9D9D9   */
     color #d9d9d9
     -webkit-transform-origin 0 100%
     transform-origin 0 100%
     -webkit-transform scaleY(0.5)
     transform scaleY(0.5)
-
-  .weui-gridactive
+  .weui-grid:active
     background-color #eaeaea
-
   .weui-grid__icon
     width 44px
     height 44px
     margin 0 auto
     text-align center
-
-  .weui-grid__icon img
-    display block
-    width 100%
-    height 100%
-
+  .weui-grid__icon 
+    img
+      display block
+      width 100%
+      height 100%
   .weui-grid__icon + .weui-grid__label
     margin-top 5px
-
   .weui-grid__label
     display block
     text-align center
@@ -148,7 +126,6 @@
     white-space nowrap
     text-overflow ellipsis
     overflow hidden
-
   .mine-cell
     border-bottom 1px solid #f2f2f2
 

@@ -22,51 +22,51 @@ export default {
             goodsList: [
                 {
                     id: 1,
-                    title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+                    title: 'DJI 大疆 悟2 INSPIRE 2 航拍变形无人机飞行器 遥控飞机',
                     price: 3001.00,
                     sell: 101,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    imgUrl: require('../../assets/shop1.png')
                 },
                 {
                     id: 2,
-                    title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+                    title: 'DJI 大疆 悟2 INSPIRE 2 航拍变形无人机飞行器 遥控飞机',
                     price: 3002.00,
                     sell: 102,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    imgUrl: require('../../assets/shop1.png')
                 },
                 {
                     id: 3,
-                    title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+                    title: 'DJI 大疆 悟2 INSPIRE 2 航拍变形无人机飞行器 遥控飞机',
                     price: 3003.00,
                     sell: 103,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    imgUrl: require('../../assets/shop1.png')
                 },
                 {
                     id: 4,
-                    title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+                    title: 'DJI 大疆 悟2 INSPIRE 2 航拍变形无人机飞行器 遥控飞机',
                     price: 3004.00,
                     sell: 104,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    imgUrl: require('../../assets/shop1.png')
                 },
                 {
                     id: 5,
-                    title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+                    title: 'DJI 大疆 悟2 INSPIRE 2 航拍变形无人机飞行器 遥控飞机',
                     price: 3005.00,
                     sell: 105,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    imgUrl: require('../../assets/shop1.png')
                 },
                 {
                     id: 6,
-                    title: '智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版',
+                    title: 'DJI 大疆 悟2 INSPIRE 2 航拍变形无人机飞行器 遥控飞机',
                     price: 3006.00,
                     sell: 106,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    imgUrl: require('../../assets/shop1.png')
                 }
             ],
             query1: "参数1",

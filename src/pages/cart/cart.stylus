@@ -148,10 +148,11 @@
     color black
     font-size 14px  
     text-align center  
-  .nodata_text img
-    margin-top 50px
-    width 44%
-    height 150px
+  .nodata_text 
+    img
+      margin-top 50px
+      width 44%
+      height 150px
   .icon
     float left
     width 5%

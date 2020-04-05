@@ -15,7 +15,10 @@ export default {
             isLike: false,
             images: [
                 require('../../assets/s-banner1.jpg'),
-                require('../../assets/s-banner2.jpg')
+                require('../../assets/s-banner2.jpg'),
+                require('../../assets/s-banner3.jpg'),
+                require('../../assets/s-banner4.jpg'),
+                require('../../assets/s-banner5.jpg')
             ],
             // 商品详情介绍
             detailImg: [

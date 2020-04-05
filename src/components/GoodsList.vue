@@ -3,7 +3,7 @@
     <div :class="viewWayData ? curActive1 : curActive2" v-for="(item,index) in goodsListData" :key="index">
       <router-link :to="{path:'/goodsDetail',query: {goodsId: item.id}}">
         <div class="goods-icon">
-          <img v-lazy="item.pic">
+          <img v-lazy="item.imgUrl">
         </div>
         <div class="goods-detail">
           <span class="goods-title">{{item.title}}</span>
@@ -63,7 +63,6 @@ export default {
   padding: 10px 10px;
   background: #ffffff;
   box-sizing: border-box;
-  margin-top: 44px;
 }
 
 /* 商品列表-块级 */
@@ -72,16 +71,21 @@ export default {
   width: 45.3%;
   margin: 2%;
   border: 1px solid #f2f2f2;
-  border-radius: 5px;
 }
 .goods-grid a {
   float: left;
   color: #333333;
 }
+.goods-grid .goods-icon {
+  float: left;
+  padding: 15px;
+  height: 138px;
+  background: #f4f4f4;
+}
 .goods-grid .goods-icon img {
   float: left;
   width: 100%;
-  height: 100px;
+  height: 138px;
 }
 .goods-grid .goods-detail {
   float: left;
@@ -130,25 +134,29 @@ export default {
   -ms-flex-align: center;
   align-items: flex-start;
   flex-direction: column;
-  margin-bottom: 6px;
-  border: 1px solid #f2f2f2;
-  border-radius: 5px;
-  margin: 2%;
+  padding: 10px 0px;
+  border-bottom: 1px solid #f2f2f2;
+}
+.goods-grid-flex:first-child{
+  padding: 0px 0px 10px 0px;
+}
+.goods-grid-flex:last-child{
+  border-bottom: 0px solid #f2f2f2;
 }
 .goods-grid-flex .goods-icon {
   float: left;
-  width: 32.495%;
+  width: 34%;
 }
 .goods-grid-flex .goods-icon img {
   float: left;
   width: 100%;
   margin: 2.5%;
-  height: 70px;
+  height: 124px;
   border-radius: 5px;
 }
 .goods-grid-flex .goods-detail {
   float: left;
-  width: 67.505%;
+  width: 66%;
   padding: 5px 10px;
   box-sizing: border-box;
 }
@@ -167,7 +175,7 @@ export default {
 }
 .goods-grid-flex .goods-detail .goods-option{
   float: left;
-  margin-top: 10px;
+  margin-top: 60px;
   width: 100%;
 }
 .goods-grid-flex .goods-price {
