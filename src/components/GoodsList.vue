@@ -175,7 +175,7 @@ export default {
 }
 .goods-grid-flex .goods-detail .goods-option{
   float: left;
-  margin-top: 60px;
+  margin-top: 50px;
   width: 100%;
 }
 .goods-grid-flex .goods-price {

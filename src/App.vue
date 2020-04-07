@@ -24,19 +24,20 @@ export default {
     // 关闭页面加载动画
     document.body.removeChild(document.getElementById('Loading'))
   },
-  watch: {//使用watch 监听$router的变化
+  watch: { // 使用watch 监听$router的变化
     $route(to, from) {
-      //如果to索引大于from索引,判断为前进状态,反之则为后退状态
-      if(to.meta.index > from.meta.index){
-	    //设置动画名称
+      // 登录拦截
+      if (to.meta.needlogin === true) {
+        this.login();
+      }
+      // 如果to索引大于from索引,判断为前进状态,反之则为后退状态
+      if (to.meta.index > from.meta.index) {
         this.transitionName = 'slide-left';
-      }else if(to.meta.index < from.meta.index){
+      } else if (to.meta.index < from.meta.index) {
         this.transitionName = 'slide-right';
-      }else{
+      } else {
         this.transitionName = 'slide';
       }
-      //判断是否登录
-      this.login();
     }
   },
   methods: {
@@ -52,7 +53,6 @@ export default {
     },
     login () {
       let loginMsg=localStorage.getItem("isLogin");
-      console.log(loginMsg)
       if(loginMsg == null || loginMsg == ""){
         this.$router.push('/Login');
       }

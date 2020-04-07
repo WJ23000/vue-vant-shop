@@ -1,0 +1,7 @@
+.error
+  .page-content
+    background #ffffff
+  .text
+    margin-top 160px
+    text-align center
+    font-size 16px
