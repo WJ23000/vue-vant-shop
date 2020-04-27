@@ -16,7 +16,7 @@ export default {
                     sell: 101,
                     url: '',
                     selected: false,
-                    icon: require('../../assets/shop1.png')
+                    icon: require('../../assets/images/shop1.png')
                 },
                 {
                     id: 2,
@@ -27,7 +27,7 @@ export default {
                     sell: 102,
                     url: '',
                     selected: false,
-                    icon: require('../../assets/shop1.png')
+                    icon: require('../../assets/images/shop1.png')
                 }
             ],
             total: 0,
@@ -35,8 +35,8 @@ export default {
             goodsCount: 0,
             delCount: 0,
             showVal: false,
-            iconXz: require('../../assets/check-xz.png'),
-            iconWxz: require('../../assets/check-Wxz.png'),
+            iconXz: require('../../assets/images/check-xz.png'),
+            iconWxz: require('../../assets/images/check-Wxz.png'),
 
         }
     },

@@ -16,7 +16,7 @@
         <Notice :noticeVal="notice"></Notice>
       </div>
       <div style="float:left;margin-bottom:50px;">
-        <GoodsList :goodsListVal="goodsList" style="margin-top:0px;"></GoodsList>
+        <GoodsList :goodsListVal="goodsList" style="margin-top:0px;" v-if="goodsList"></GoodsList>
       </div>
       <!-- backTop 回顶部的组件 -->
       <ToTop/>

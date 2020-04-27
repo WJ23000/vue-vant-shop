@@ -25,11 +25,11 @@
         </div>
       </div>
       <div>
-        <van-cell title="我的评价" :icon="require('../../assets/mine-evalu.png')" is-link :to="{path:'/evaluList'}"/>
-        <van-cell title="收货地址" :icon="require('../../assets/mine-address.png')" is-link :to="{path:'/address'}"/>
-        <van-cell title="我的收藏" :icon="require('../../assets/mine-collection.png')" is-link :to="{path:'/collection'}"/>
-        <van-cell title="我的邀请码" :icon="require('../../assets/mine-code.png')" is-link :to="{path:'#'}"/>
-        <van-cell title="设置" :icon="require('../../assets/mine-set.png')" is-link :to="{path:'/set'}"/>
+        <van-cell title="我的评价" :icon="require('../../assets/images/mine-evalu.png')" is-link :to="{path:'/evaluList'}"/>
+        <van-cell title="收货地址" :icon="require('../../assets/images/mine-address.png')" is-link :to="{path:'/address'}"/>
+        <van-cell title="我的收藏" :icon="require('../../assets/images/mine-collection.png')" is-link :to="{path:'/collection'}"/>
+        <van-cell title="我的邀请码" :icon="require('../../assets/images/mine-code.png')" is-link :to="{path:'#'}"/>
+        <van-cell title="设置" :icon="require('../../assets/images/mine-set.png')" is-link :to="{path:'/set'}"/>
       </div>
     </div>
     <van-tabbar v-model="navActive">

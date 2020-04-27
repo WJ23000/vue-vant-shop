@@ -23,13 +23,13 @@
             <div class='order-cell'>
                 <div class='order-cell-store'>
                     <div class='store-img'>
-                        <img class='img' src='../../assets/order-icon.png'/>
+                        <img class='img' src='../../assets/images/order-icon.png'/>
                     </div>
                     <div class='store-left'>乐购商城</div>
                 </div>
                 <div class='order-cell-shop'>
                 <div class='shop-img'>
-                    <img class='img' src='../../assets/shop1.png'/>
+                    <img class='img' src='../../assets/images/shop1.png'/>
                 </div>
                 <div class='shop-fx'>
                     <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
@@ -62,13 +62,13 @@
             <div class='order-cell'>
                 <div class='order-cell-store'>
                     <div class='store-img'>
-                        <img class='img' src='../../assets/order-icon.png'/>
+                        <img class='img' src='../../assets/images/order-icon.png'/>
                     </div>
                     <div class='store-left'>乐购商城</div>
                 </div>
                 <div class='order-cell-shop'>
                 <div class='shop-img'>
-                    <img class='img' src='../../assets/shop1.png'/>
+                    <img class='img' src='../../assets/images/shop1.png'/>
                 </div>
                 <div class='shop-fx'>
                     <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>

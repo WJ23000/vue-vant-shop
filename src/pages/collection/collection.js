@@ -15,7 +15,7 @@ export default {
                     price: 3001.00,
                     sell: 101,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 },
                 {
@@ -24,7 +24,7 @@ export default {
                     price: 3002.00,
                     sell: 102,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 },
                 {
@@ -33,7 +33,7 @@ export default {
                     price: 3003.00,
                     sell: 103,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 },
                 {
@@ -42,7 +42,7 @@ export default {
                     price: 3004.00,
                     sell: 104,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 },
                 {
@@ -51,7 +51,7 @@ export default {
                     price: 3005.00,
                     sell: 105,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 },
                 {
@@ -60,7 +60,7 @@ export default {
                     price: 3006.00,
                     sell: 106,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 }
             ],
@@ -71,7 +71,7 @@ export default {
                     price: 3007.00,
                     sell: 107,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 },
                 {
@@ -80,7 +80,7 @@ export default {
                     price: 3008.00,
                     sell: 108,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 },
                 {
@@ -89,15 +89,15 @@ export default {
                     price: 3009.00,
                     sell: 109,
                     url: '',
-                    icon: require('../../assets/shop1.png'),
+                    icon: require('../../assets/images/shop1.png'),
                     selected: false
                 }
             ],
             CheckAll: false,
             delCount: 0,
             showVal: true,
-            iconXz: require('../../assets/check-xz.png'),
-            iconWxz: require('../../assets/check-Wxz.png'),
+            iconXz: require('../../assets/images/check-xz.png'),
+            iconWxz: require('../../assets/images/check-Wxz.png'),
             curActive1: "order-cell order-active",
             curActive2: "order-cell",
         }

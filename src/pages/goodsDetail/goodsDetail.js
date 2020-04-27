@@ -14,28 +14,27 @@ export default {
             goodsId: "",
             isLike: false,
             images: [
-                require('../../assets/s-banner1.jpg'),
-                require('../../assets/s-banner2.jpg'),
-                require('../../assets/s-banner3.jpg'),
-                require('../../assets/s-banner4.jpg'),
-                require('../../assets/s-banner5.jpg')
+                require("../../assets/images/banner1.jpg"),
+                require("../../assets/images/banner2.jpg"),
+                require("../../assets/images/banner3.jpg"),
+                require("../../assets/images/banner4.jpg")
             ],
             // 商品详情介绍
             detailImg: [
-                { img: require('../../assets/sp-detail1.png') },
-                { img: require('../../assets/sp-detail2.png') }
+                { img: require('../../assets/images/sp-detail1.png') },
+                { img: require('../../assets/images/sp-detail2.png') }
             ],
             // 评价列表
             commentList: [
                 {
                     id: 1,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "大黑",
                     content: "商家很靠谱，物美价廉、商品质量真的很不错，下次还会再来的",
                     goodsImg: [
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-25 15:23:30",
                     likeNum: 554,
@@ -43,7 +42,7 @@ export default {
                 }
             ],
             // 规格
-            specifImg: require('../../assets/shop1.png'),
+            specifImg: require('../../assets/images/shop1.png'),
             specifTitle: "选择 规格参数",
             specifPrice: "3500-4000",
             specifStock: "5000",

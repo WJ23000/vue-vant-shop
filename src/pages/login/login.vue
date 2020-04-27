@@ -30,8 +30,8 @@
       </form>
       <div class="login-option-title">第三方登录</div>
       <div class="login-option-content">
-          <span class="login-author" @click="qqLogin"><img src="../../assets/qq-icon.png"/></span>
-          <span class="login-author" @click="wxLogin"><img src="../../assets/wx-icon.png"/></span>
+          <span class="login-author" @click="qqLogin"><img src="../../assets/images/qq-icon.png"/></span>
+          <span class="login-author" @click="wxLogin"><img src="../../assets/images/wx-icon.png"/></span>
       </div>
     </div>
   </div>

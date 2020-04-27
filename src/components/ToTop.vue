@@ -1,7 +1,7 @@
 <template>
     <div>
         <!-- backTop 回顶部的方法 -->
-        <img v-if="btnFlag" class="go-top" src="../assets/to-top.png" @click="backTop">
+        <img v-if="btnFlag" class="go-top" src="../assets/images/to-top.png" @click="backTop">
     </div>
 </template>
 

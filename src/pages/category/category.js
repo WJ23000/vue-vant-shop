@@ -13,22 +13,22 @@ export default {
                             {
                                 child_id: 1,
                                 name: '洁面皂',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 2,
                                 name: '卸妆',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 3,
                                 name: '洁面乳',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 4,
                                 name: '面部祛角质',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             }
                         ]
                 },
@@ -41,67 +41,67 @@ export default {
                             {
                                 child_id: 1,
                                 name: '气垫bb',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 2,
                                 name: '修容/高光',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 3,
                                 name: '遮瑕',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 4,
                                 name: '腮红',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 5,
                                 name: '粉饼',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 6,
                                 name: '粉底',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 7,
                                 name: '蜜粉/散粉',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 8,
                                 name: '隔离霜',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 9,
                                 name: '腮红',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 10,
                                 name: '粉饼',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 11,
                                 name: '粉底',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 12,
                                 name: '蜜粉/散粉',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 13,
                                 name: '隔离霜',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             }
                         ]
                 },
@@ -114,22 +114,22 @@ export default {
                             {
                                 child_id: 1,
                                 name: '淡香水EDT',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 2,
                                 name: '浓香水EDP',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 3,
                                 name: '香体走珠',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             },
                             {
                                 child_id: 4,
                                 name: '古龙香水男士的最爱',
-                                image: require('../../assets/shop1.png')
+                                image: require('../../assets/images/shop1.png')
                             }
                         ]
                 },

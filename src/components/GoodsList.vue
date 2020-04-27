@@ -8,7 +8,7 @@
         <div class="goods-detail">
           <span class="goods-title">{{item.title}}</span>
           <div class="goods-option">
-            <span class="goods-price"><span class="symbol">￥</span>{{item.price}}</span>
+            <span class="goods-price"><span class="symbol">￥</span>{{item.money}}</span>
             <span class="goods-sell">已出售{{item.sell}}</span>
           </div>
         </div>
@@ -78,7 +78,7 @@ export default {
 }
 .goods-grid .goods-icon {
   float: left;
-  padding: 15px;
+  padding: 10px;
   height: 138px;
   background: #f4f4f4;
 }

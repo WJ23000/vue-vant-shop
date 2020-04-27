@@ -28,7 +28,7 @@
         </div>
         <!-- 如果无数据，则显示数据 -->
         <div class="nodata_text" v-else>
-            <img src='../../assets/no-result.png'/>
+            <img src='../../assets/images/no-result.png'/>
         </div>
         <!-- 底部评论框 -->
         <div class="page-footer">

@@ -18,7 +18,7 @@ export default {
                     specif: "蓝色",
                     count: 2,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    icon: require('../../assets/images/shop1.png')
                 },
                 {
                     id: 2,
@@ -29,7 +29,7 @@ export default {
                     specif: "蓝色",
                     count: 2,
                     url: '',
-                    icon: require('../../assets/shop1.png')
+                    icon: require('../../assets/images/shop1.png')
                 }
             ]
         }

@@ -12,13 +12,13 @@ export default {
             commentList: [
                 {
                     id: 1,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "大黑",
                     content: "商家很靠谱，物美价廉、商品质量真的很不错，下次还会再来的",
                     goodsImg: [
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-25 15:23:30",
                     likeNum: 554,
@@ -26,12 +26,12 @@ export default {
                 },
                 {
                     id: 2,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "二黑",
                     content: "商品质量真的很不错2",
                     goodsImg: [
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-26 17:23:30",
                     likeNum: 699,
@@ -39,12 +39,12 @@ export default {
                 },
                 {
                     id: 3,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "三黑",
                     content: "商品质量真的很不错3",
                     goodsImg: [
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-27 19:23:30",
                     likeNum: 255,
@@ -52,11 +52,11 @@ export default {
                 },
                 {
                     id: 4,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "四黑",
                     content: "商品质量真的很不错4",
                     goodsImg: [
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-25 15:23:30",
                     likeNum: 388,
@@ -64,11 +64,11 @@ export default {
                 },
                 {
                     id: 5,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "五黑",
                     content: "商品质量真的很不错5",
                     goodsImg: [
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-26 17:23:30",
                     likeNum: 552,
@@ -76,13 +76,13 @@ export default {
                 },
                 {
                     id: 6,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "六黑",
                     content: "商品质量真的很不错6",
                     goodsImg: [
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-27 19:23:30",
                     likeNum: 6666,
@@ -90,12 +90,12 @@ export default {
                 },
                 {
                     id: 7,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "五黑",
                     content: "商品质量真的很不错7",
                     goodsImg: [
-                        require('../../assets/shop1.png'),
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png'),
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-26 17:23:30",
                     likeNum: 788,
@@ -103,11 +103,11 @@ export default {
                 },
                 {
                     id: 8,
-                    userImg: require('../../assets/user.png'),
+                    userImg: require('../../assets/images/user.png'),
                     userName: "六黑",
                     content: "商品质量真的很不错8",
                     goodsImg: [
-                        require('../../assets/shop1.png')
+                        require('../../assets/images/shop1.png')
                     ],
                     createTime: "2019-02-27 19:23:30",
                     likeNum: 866,
@@ -115,8 +115,8 @@ export default {
                 }
             ],
             commentVal: "",
-            okZan: require('../../assets/ok-zan.png'),
-            noZan: require('../../assets/no-zan.png'),
+            okZan: require('../../assets/images/ok-zan.png'),
+            noZan: require('../../assets/images/no-zan.png'),
             height: 0,
             adjustVal: false,
             confirmVal: true
