@@ -16,9 +16,9 @@ export default {
                     userName: "大黑",
                     content: "商家很靠谱，物美价廉、商品质量真的很不错，下次还会再来的",
                     goodsImg: [
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-25 15:23:30",
                     likeNum: 554,
@@ -30,8 +30,8 @@ export default {
                     userName: "二黑",
                     content: "商品质量真的很不错2",
                     goodsImg: [
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-26 17:23:30",
                     likeNum: 699,
@@ -43,8 +43,8 @@ export default {
                     userName: "三黑",
                     content: "商品质量真的很不错3",
                     goodsImg: [
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-27 19:23:30",
                     likeNum: 255,
@@ -56,7 +56,7 @@ export default {
                     userName: "四黑",
                     content: "商品质量真的很不错4",
                     goodsImg: [
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-25 15:23:30",
                     likeNum: 388,
@@ -68,7 +68,7 @@ export default {
                     userName: "五黑",
                     content: "商品质量真的很不错5",
                     goodsImg: [
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-26 17:23:30",
                     likeNum: 552,
@@ -80,9 +80,9 @@ export default {
                     userName: "六黑",
                     content: "商品质量真的很不错6",
                     goodsImg: [
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-27 19:23:30",
                     likeNum: 6666,
@@ -94,8 +94,8 @@ export default {
                     userName: "五黑",
                     content: "商品质量真的很不错7",
                     goodsImg: [
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-26 17:23:30",
                     likeNum: 788,
@@ -107,7 +107,7 @@ export default {
                     userName: "六黑",
                     content: "商品质量真的很不错8",
                     goodsImg: [
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-27 19:23:30",
                     likeNum: 866,

@@ -18,7 +18,7 @@ export default {
                     specif: "蓝色",
                     count: 2,
                     url: '',
-                    icon: require('../../assets/images/shop1.png')
+                    icon: require('../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg')
                 },
                 {
                     id: 2,
@@ -29,7 +29,7 @@ export default {
                     specif: "蓝色",
                     count: 2,
                     url: '',
-                    icon: require('../../assets/images/shop1.png')
+                    icon: require('../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg')
                 }
             ]
         }

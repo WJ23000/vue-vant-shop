@@ -32,9 +32,9 @@ export default {
                     userName: "大黑",
                     content: "商家很靠谱，物美价廉、商品质量真的很不错，下次还会再来的",
                     goodsImg: [
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png'),
-                        require('../../assets/images/shop1.png')
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
+                        require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg')
                     ],
                     createTime: "2019-02-25 15:23:30",
                     likeNum: 554,
@@ -42,7 +42,7 @@ export default {
                 }
             ],
             // 规格
-            specifImg: require('../../assets/images/shop1.png'),
+            specifImg: require('../../assets/images/goods/官方正品TOMFORD RosePrick 玫瑰花香调.jpg'),
             specifTitle: "选择 规格参数",
             specifPrice: "3500-4000",
             specifStock: "5000",

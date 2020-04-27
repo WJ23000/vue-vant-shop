@@ -69,7 +69,7 @@
       .shop-price
         position absolute
         bottom 4px
-        margin-left 120px
+        margin-left 128px
         font-size 14px
         color #3982f6
         height 20px

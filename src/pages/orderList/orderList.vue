@@ -17,7 +17,7 @@
                 </div>
                 <div class='order-cell-shop'>
                   <div class='shop-img'>
-                    <img class='img' src='../../assets/images/shop1.png'/>
+                    <img class='img' src='../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg'/>
                   </div>
                   <div class='shop-fx'>
                     <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
@@ -43,7 +43,7 @@
               </div>
               <div class='order-cell-shop'>
                 <div class='shop-img'>
-                  <img class='img' src='../../assets/images/shop1.png'/>
+                  <img class='img' src='../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg'/>
                 </div>
                 <div class='shop-fx'>
                   <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
@@ -66,7 +66,7 @@
               </div>
               <div class='order-cell-shop'>
                 <div class='shop-img'>
-                  <img class='img' src='../../assets/images/shop1.png'/>
+                  <img class='img' src='../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg'/>
                 </div>
                 <div class='shop-fx'>
                   <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
@@ -91,7 +91,7 @@
               </div>
               <div class='order-cell-shop'>
                 <div class='shop-img'>
-                  <img class='img' src='../../assets/images/shop1.png'/>
+                  <img class='img' src='../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg'/>
                 </div>
                 <div class='shop-fx'>
                   <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
@@ -116,7 +116,7 @@
               </div>
               <div class='order-cell-shop'>
                 <div class='shop-img'>
-                  <img class='img' src='../../assets/images/shop1.png'/>
+                  <img class='img' src='../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg'/>
                 </div>
                 <div class='shop-fx'>
                   <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>
@@ -141,7 +141,7 @@
               </div>
               <div class='order-cell-shop'>
                 <div class='shop-img'>
-                  <img class='img' src='../../assets/images/shop1.png'/>
+                  <img class='img' src='../../assets/images/goods/珀莱雅水漾芯肌透润霜倍润补水锁水保湿滋润面霜学生护肤专柜正品.jpg'/>
                 </div>
                 <div class='shop-fx'>
                   <div class='shop-label'>智能飞行器高空拍摄续航6小时，高清在线生成远景视频，蓝色荣耀奢华版优惠大放送</div>

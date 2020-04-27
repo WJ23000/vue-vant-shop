@@ -43,7 +43,7 @@ export default {
                     img_src: require("../../assets/images/index-lb4.png")
                 }
             ],
-            notice: "云逸商贸1周年，冬季大酬宾，各类电子商品、家居用品大优惠",
+            notice: "云逸彩妆10周年，各种彩妆、护肤品、润肤品代购，量大优惠",
             goodsList: [ ]
         };
     },
