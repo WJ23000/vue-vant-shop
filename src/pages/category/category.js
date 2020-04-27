@@ -5,7 +5,14 @@ export default {
     data() {
         return {
             navActive: 1,
-            cateItems: [],
+            cateItems: [
+                {
+                    cate_id: 1,
+                    cate_name: "",
+                    ishaveChild: true,
+                    children: []                  
+                }
+            ],
             curNav: 1,
             curIndex: 0,
             curActive1: "nav_left_items active",
