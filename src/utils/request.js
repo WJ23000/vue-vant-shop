@@ -7,7 +7,7 @@ axios.interceptors.request.use(
         const token = localStorage.getItem("token");
         config.data = JSON.stringify(config.data);
         config.headers = {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/jsonp'
         }
         if(token){
           config.params = {'token':token}
@@ -44,7 +44,7 @@ axios.interceptors.response.use(
 export function get(url, params={}) {
     return new Promise((resolve, reject) => {
         axios.get(url, {
-            params: params
+            params: QS.stringify(params)
         }).then(response => {
             resolve(response.data);
         })
@@ -62,7 +62,7 @@ export function get(url, params={}) {
 */
 export function post(url, params) {
     return new Promise((resolve, reject) => {
-        axios.post(url, QS.stringify(params))
+        axios.post(url, params)
         .then(response => {
             resolve(response.data);
         }, err => {

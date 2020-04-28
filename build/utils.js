@@ -44,10 +44,12 @@ exports.cssLoaders = function (options) {
 
     // Extract CSS when that option is specified
     // (which is the case during production build)
+    // publicPath 解决打包后找不到json文件问题
     if (options.extract) {
       return ExtractTextPlugin.extract({
         use: loaders,
-        fallback: 'vue-style-loader'
+        fallback: 'vue-style-loader',
+        publicPath: '../../'
       })
     } else {
       return ['vue-style-loader'].concat(loaders)

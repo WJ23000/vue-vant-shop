@@ -1,11 +1,9 @@
-import { get, post } from '@/utils/request';
-import requestUrl from "@/utils/commonUrl";
+import { get, post } from '../utils/request';
+import baseUrl from "../config/config";
 
-const baseUrl = requestUrl.testUrl;
+const url = baseUrl + '/categoryService';
 
 export function getCategoryList(params) {
-    const url = 'static/data/category.json?type=' + params;
-    return get(url, params);
+    const requestUrl = url + "/getCategoryList?type=" + params;
+    return get(requestUrl, params);
 }
-
-

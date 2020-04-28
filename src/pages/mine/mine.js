@@ -1,4 +1,4 @@
-import { getUserInfo, postUserInfo } from "@/services/mine";
+import { getUserInfo } from "@/services/mine";
 
 export default {
     name: "Mine",
@@ -36,7 +36,11 @@ export default {
         };
     },
     created() {
-        postUserInfo('11')
+        // 获取用户信息
+        getUserInfo("user").then((res) => {
+            this.userName = res.userName;
+            this.userImg = require('../../assets/images/user.png');
+        })
     },
     mounted() {
 

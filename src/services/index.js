@@ -1,11 +1,9 @@
-import { get, post } from '@/utils/request';
-import requestUrl from "@/utils/commonUrl";
+import { get, post } from '../utils/request';
+import baseUrl from "../config/config";
 
-const baseUrl = requestUrl.testUrl;
+const url = baseUrl + '/goodsService';
 
 export function getGoodsList(params) {
-    const url = 'static/data/goods.json?type='+params;
-    return get(url, params);
+    const requestUrl = url + "/getGoodsList?type=" + params;
+    return get(requestUrl, params);
 }
-
-

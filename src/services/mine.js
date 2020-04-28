@@ -1,15 +1,9 @@
-import { get, post } from '@/utils/request';
-import requestUrl from "@/utils/commonUrl";
+import { get, post } from '../utils/request';
+import baseUrl from "../config/config";
 
-const baseUrl = requestUrl.testUrl;
+const url = baseUrl + '/userService';
 
-export function getUserInfo(params){
-    const url = baseUrl + '/userInfo?id='+params;
-    return get(url,params);
+export function getUserInfo(params) {
+    const requestUrl = url + "/getUserInfo?type=" + params;
+    return get(requestUrl, params);
 }
-
-export function postUserInfo(params) {
-    const url = baseUrl + '/userInfo';
-    return get(url, params);
-}
-
