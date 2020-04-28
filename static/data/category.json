@@ -1,0 +1,188 @@
+[
+    {
+        "cate_id": 1,
+        "cate_name": "护肤",
+        "ishaveChild": true,
+        "children": [
+            {
+                "children": 1,
+                "name": "洁面皂",
+                "imgUrl": "../../assets/images/category/洁面皂.jpg"
+            },
+            {
+                "children": 2,
+                "name": "卸妆",
+                "imgUrl": "../../assets/images/category/卸妆.jpg"
+            },
+            {
+                "children": 3,
+                "name": "洁面乳",
+                "imgUrl": "../../assets/images/category/洁面乳.jpg"
+            },
+            {
+                "children": 4,
+                "name": "面部祛角质",
+                "imgUrl": "../../assets/images/category/面部祛角质.jpg"
+            }
+        ]
+    },
+    {
+        "cate_id": 2,
+        "cate_name": "彩妆",
+        "ishaveChild": true,
+        "children": [
+            {
+                "children": 1,
+                "name": "气垫bb",
+                "imgUrl": "../../assets/images/category/气垫bb.jpg"
+            },
+            {
+                "children": 2,
+                "name": "修容高光",
+                "imgUrl": "../../assets/images/category/修容高光.jpg"
+            },
+            {
+                "children": 3,
+                "name": "遮瑕",
+                "imgUrl": "../../assets/images/category/遮瑕.jpg"
+            },
+            {
+                "children": 4,
+                "name": "腮红",
+                "imgUrl": "../../assets/images/category/腮红.jpg"
+            },
+            {
+                "children": 5,
+                "name": "粉饼",
+                "imgUrl": "../../assets/images/category/粉饼.jpg"
+            },
+            {
+                "children": 6,
+                "name": "粉底",
+                "imgUrl": "../../assets/images/category/粉底.jpg"
+            },
+            {
+                "children": 7,
+                "name": "蜜粉散粉",
+                "imgUrl": "../../assets/images/category/蜜粉散粉.jpg"
+            },
+            {
+                "children": 8,
+                "name": "隔离霜",
+                "imgUrl": "../../assets/images/category/隔离霜.jpg"
+            },
+            {
+                "children": 9,
+                "name": "口红",
+                "imgUrl": "../../assets/images/category/口红.jpg"
+            },
+            {
+                "children": 10,
+                "name": "面膜",
+                "imgUrl": "../../assets/images/category/面膜.jpg"
+            },
+            {
+                "children": 11,
+                "name": "海底泥",
+                "imgUrl": "../../assets/images/category/海底泥.jpg"
+            },
+            {
+                "children": 12,
+                "name": "卸妆水",
+                "imgUrl": "../../assets/images/category/卸妆水.jpg"
+            },
+            {
+                "children": 13,
+                "name": "润肤露",
+                "imgUrl": "../../assets/images/category/润肤露.jpg"
+            }
+        ]
+    },
+    {
+        "cate_id": 3,
+        "cate_name": "香水/香氛",
+        "ishaveChild": true,
+        "children": [
+            {
+                "children": 1,
+                "name": "淡香水EDT",
+                "imgUrl": "../../assets/images/category/淡香水EDT.jpg"
+            },
+            {
+                "children": 2,
+                "name": "浓香水EDP",
+                "imgUrl": "../../assets/images/category/浓香水EDP.jpg"
+            },
+            {
+                "children": 3,
+                "name": "香体走珠",
+                "imgUrl": "../../assets/images/category/香体走珠.jpg"
+            },
+            {
+                "children": 4,
+                "name": "古龙香水男士的最爱",
+                "imgUrl": "../../assets/images/category/古龙香水男士的最爱.jpg"
+            }
+        ]
+    },
+    {
+        "cate_id": 4,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 5,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 6,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 7,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 8,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 9,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 10,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 11,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 12,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    },
+    {
+        "cate_id": 13,
+        "cate_name": "其他",
+        "ishaveChild": false,
+        "children": []
+    }
+]
