@@ -7,7 +7,7 @@ axios.interceptors.request.use(
         const token = localStorage.getItem("token");
         config.data = JSON.stringify(config.data);
         config.headers = {
-            'Content-Type': 'application/jsonp'
+            'Content-Type': 'application/json'
         }
         if(token){
           config.params = {'token':token}
