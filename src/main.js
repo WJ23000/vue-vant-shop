@@ -9,11 +9,6 @@ import 'vant/lib/index.css'
 import '../src/styles/app.css'
 import '../src/styles/font.css'
 
-// 使用axios请求方式
-import axios from 'axios'
-// 改为原型组件使用方式
-Vue.prototype.$http = axios
-
 // 使用vuex机制
 import store from './store/store.js'
 // 注册vuex中间件
