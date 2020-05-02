@@ -7,3 +7,8 @@ export function getUserInfo(params) {
     const requestUrl = url + "/getUserInfo?type=" + params;
     return get(requestUrl, params);
 }
+
+export function editUserInfo(params) {
+    const requestUrl = url + "/editUserInfo";
+    return post(requestUrl, params);
+}

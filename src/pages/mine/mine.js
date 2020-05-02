@@ -1,4 +1,4 @@
-import { getUserInfo } from "@/services/mine";
+import { getUserInfo, editUserInfo } from "@/services/mine";
 
 export default {
     name: "Mine",
@@ -40,6 +40,13 @@ export default {
         getUserInfo("user").then((res) => {
             this.userName = res.userName;
             this.userImg = require('../../assets/images/user.png');
+        })
+        // 编辑用户信息
+        let userInfo = {
+            hoby: "琴棋书画"
+        }
+        editUserInfo(userInfo).then((res) => {
+            console.log("返回信息", res);
         })
     },
     mounted() {
